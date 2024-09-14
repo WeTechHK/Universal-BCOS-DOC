@@ -46,6 +46,5 @@
 
    develop/smart_contract_develop.md
    develop/connect_hkchain.md
-   develop/deploy_guide.md
    develop/dapp_guide.md
-   develop/enterprise_guide.md
+   develop/deploy_guide.md
