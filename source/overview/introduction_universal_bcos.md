@@ -6,24 +6,17 @@ The current blockchain in Web3 suffers from insufficient performance, low securi
 
 ## Design Goals
 
-### Financial-grade
+- Financial-grade
+	- High Performance: Over 10K tps in concurrency along with sub-second finallization
+	- High Security: Comprehensive safety design, 100% tested by third-party certification organizations
 
-- High Performance
-	- Over 10K tps in concurrency along with sub-second finallization
+- Open
+	- Open source: All infrastructure and governance source code is open
+	- Open compatibility: Compatible with EVM for seamless migration of solidity contracts
+	- Open participation: Suppports different roles to join the network with diverse nodes
 
-- High Security:
-	- Comprehensive safety design, 100% tested by third-party certification organizations
-	- Built-in tools to meets regulatory requirements
+## The relationship between Universal BCOS and FISCO BCOS
 
-### Open
-
-- Open source: All infrastructure and governance source code is open
-- Open compatibility: Compatible with EVM for seamless migration of solidity contracts
-- Open participation: Suppports different roles to join the network with diverse nodes
-
-## The connection between Universal BCOS and FISCO BCOS
-
-The relationship between Universal BCOS and FISCO BCOS:
 - Universal BCOS is the international version developed based on FISCO BCOS, dedicated to serving the development of Web3 in overseas regions.
 - Universal BCOS and FISCO BCOS develop in parallel, with future features being interoperable and ecological resources shared between them.
 - Currently, the organizing and operating entity of Universal BCOS is WeTech, with plans to introduce more institutions to participate in its joint construction in the future.
