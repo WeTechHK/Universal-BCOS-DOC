@@ -56,3 +56,10 @@
    research/ecosystem.md
    research/archetecture.md
    research/security.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Community
+
+   community/contribute.md
+   community/events.md
