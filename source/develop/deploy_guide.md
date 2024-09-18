@@ -1,12 +1,12 @@
-# Deploy guide
+# How to build a chain
 
 ## Introduction
 
-This guide walks you through the process of instantiating a configurable local Ethereum testnet, deploying a smart contract to it, and using the testnet to run tests against your dApp. This guide is designed for dApp developers who want to develop and test their dApps locally against different network configurations before deploying to a live testnet or the mainnet.
+This guide walks you through the process of instantiating a configurable local Universal BCOS testnet, deploying a smart contract to it, and using the testnet to run tests against your dApp. This guide is designed for dApp developers who want to develop and test their dApps locally against different network configurations before deploying to a live testnet or the mainnet.
 
 In this guide, you will:
 
-- Instantiate a local Ethereum testnet with the [`eth-network-package`](https://github.com/kurtosis-tech/eth-network-package) using [Kurtosis](https://www.kurtosis.com/),
+- Instantiate a local Universal BCOS testnet with the [`eth-network-package`](https://github.com/kurtosis-tech/eth-network-package) using [Kurtosis](https://www.kurtosis.com/),
 - Connect your Hardhat dApp development environment to the local testnet to compile, deploy, and test a dApp, and
 - Configure the local testnet, including parameters like number of nodes and specific EL/CL client pairings, to enable development and testing workflows against various network configurations.
 
@@ -14,7 +14,7 @@ In this guide, you will:
 
 [Kurtosis](https://www.kurtosis.com/) is a composable build system designed for configuring multi-container test environments. It specifically enables developers to create reproducible environments that require dynamic setup logic, such as blockchain testnets.
 
-In this guide, the Kurtosis eth-network-package spins up a local Ethereum testnet with support for the [`geth`](https://geth.ethereum.org/) Execution Layer (EL) client, as well as [`teku`](https://consensys.net/knowledge-base/ethereum-2/teku/), [`lighthouse`](https://lighthouse.sigmaprime.io/), and [`lodestar`](https://lodestar.chainsafe.io/) Consensus Layer (CL) clients. This package serves as a configurable and composable alternative to networks in frameworks like Hardhat Network, Ganache, and Anvil. Kurtosis offers developers greater control and flexibility over the testnets they use, which is a major reason why the [Ethereum Foundation used Kurtosis to test the Merge](https://www.kurtosis.com/blog/testing-the-ethereum-merge) and continues to use it for testing network upgrades.
+In this guide, the Kurtosis eth-network-package spins up a local Universal BCOS testnet with support for the [`geth`](https://geth.Universal BCOS.org/) Execution Layer (EL) client, as well as [`teku`](https://consensys.net/knowledge-base/Universal BCOS-2/teku/), [`lighthouse`](https://lighthouse.sigmaprime.io/), and [`lodestar`](https://lodestar.chainsafe.io/) Consensus Layer (CL) clients. This package serves as a configurable and composable alternative to networks in frameworks like Hardhat Network, Ganache, and Anvil. Kurtosis offers developers greater control and flexibility over the testnets they use, which is a major reason why the [Universal BCOS Foundation used Kurtosis to test the Merge](https://www.kurtosis.com/blog/testing-the-Universal BCOS-merge) and continues to use it for testing network upgrades.
 
 ## Setting up Kurtosis
 
@@ -24,9 +24,9 @@ Before you proceed, make sure you have:
 - [Installed the Kurtosis CLI](https://docs.kurtosis.com/next/install#ii-install-the-cli) (or upgraded it to the latest release, if you already have the CLI installed)
 - Installed [Node.js](https://nodejs.org/en), [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable), and [npx](https://www.npmjs.com/package/npx) (for your dApp environment)
 
-## Instantiating a local Ethereum testnet
+## Instantiating a local Universal BCOS testnet
 
-To spin up a local Ethereum testnet, run:
+To spin up a local Universal BCOS testnet, run:
 
 ```python
 kurtosis --enclave local-eth-testnet run github.com/kurtosis-tech/eth-network-package
@@ -74,17 +74,17 @@ d7b802f623e8   el-client-0                                    engine-rpc: 8551/t
 
 ```
 
-Congratulations! You used Kurtosis to instantiate a local Ethereum testnet, with a CL (`lighthouse`) and EL client (`geth`), over Docker.
+Congratulations! You used Kurtosis to instantiate a local Universal BCOS testnet, with a CL (`lighthouse`) and EL client (`geth`), over Docker.
 
 ### Review
 
-In this section, you executed a command that directed Kurtosis to use the [`eth-network-package` hosted remotely on GitHub](https://github.com/kurtosis-tech/eth-network-package) to spin up a local Ethereum testnet within a Kurtosis [Enclave](https://docs.kurtosis.com/concepts-reference/enclaves/). Inside your enclave, you will find both "file artifacts" and "user services".
+In this section, you executed a command that directed Kurtosis to use the [`eth-network-package` hosted remotely on GitHub](https://github.com/kurtosis-tech/eth-network-package) to spin up a local Universal BCOS testnet within a Kurtosis [Enclave](https://docs.kurtosis.com/concepts-reference/enclaves/). Inside your enclave, you will find both "file artifacts" and "user services".
 
-The [File Artifacts](https://docs.kurtosis.com/concepts-reference/files-artifacts/) in your enclave include all the data generated and utilized to bootstrap the EL and CL clients. The data was created using the `prelaunch-data-generator` service built from this [Docker image](https://github.com/ethpandaops/ethereum-genesis-generator)
+The [File Artifacts](https://docs.kurtosis.com/concepts-reference/files-artifacts/) in your enclave include all the data generated and utilized to bootstrap the EL and CL clients. The data was created using the `prelaunch-data-generator` service built from this [Docker image](https://github.com/ethpandaops/Universal BCOS-genesis-generator)
 
 User services display all the containerized services operating in your enclave. You will notice that a single node, featuring both an EL client and a CL client, has been created.
 
-## Connect your dApp development environment to the local Ethereum testnet
+## Connect your dApp development environment to the local Universal BCOS testnet
 
 ### Setup the dApp development environment
 
@@ -99,13 +99,13 @@ git clone https://github.com/kurtosis-tech/awesome-kurtosis.git && cd awesome-ku
 The [smart-contract-example](https://github.com/kurtosis-tech/awesome-kurtosis/tree/main/smart-contract-example) folder used here contains the typical setup for a dApp developer using the [Hardhat](https://hardhat.org/) framework:
 
 - [`contracts/`](https://github.com/kurtosis-tech/awesome-kurtosis/tree/main/smart-contract-example/contracts) contains a few simple smart contracts for a Blackjack dApp
-- [`scripts/`](https://github.com/kurtosis-tech/awesome-kurtosis/tree/main/smart-contract-example/scripts) contains a script to deploy a token contract to your local Ethereum network
+- [`scripts/`](https://github.com/kurtosis-tech/awesome-kurtosis/tree/main/smart-contract-example/scripts) contains a script to deploy a token contract to your local Universal BCOS network
 - [`test/`](https://github.com/kurtosis-tech/awesome-kurtosis/tree/main/smart-contract-example/test) contains a simple .js test for your token contract to confirm each player in our Blackjack dApp has 1000 minted for them
 - [`hardhat.config.ts`](https://github.com/kurtosis-tech/awesome-kurtosis/blob/main/smart-contract-example/hardhat.config.ts) configures your Hardhat setup
 
 ### Configure Hardhat to use the local testnet
 
-With your dApp development environment set up, you will now connect Hardhat to use the local Ethereum testnet generated using Kurtosis. To accomplish this, replace `<$YOUR_PORT>` in the `localnet` struct in your `hardhat.config.ts` config file with the port of the rpc uri output from any `el-client-<num>` service. In this sample case, the port would be `64248`. Your port will be different.
+With your dApp development environment set up, you will now connect Hardhat to use the local Universal BCOS testnet generated using Kurtosis. To accomplish this, replace `<$YOUR_PORT>` in the `localnet` struct in your `hardhat.config.ts` config file with the port of the rpc uri output from any `el-client-<num>` service. In this sample case, the port would be `64248`. Your port will be different.
 
 Example in `hardhat.config.ts`:
 
@@ -126,7 +126,7 @@ accounts: [
 },
 ```
 
-Once you save your file, your Hardhat dApp development environment is now connected to your local Ethereum testnet! You can verify that your testnet is working by running:
+Once you save your file, your Hardhat dApp development environment is now connected to your local Universal BCOS testnet! You can verify that your testnet is working by running:
 
 ```python
 npx hardhat balances --network localnet
@@ -147,7 +147,7 @@ This confirms that Hardhat is using your local testnet and detects the pre-funde
 
 ### Deploy and test your dApp locally
 
-With the dApp development environment fully connected to the local Ethereum testnet, you can now run development and testing workflows against your dApp using the local testnet.
+With the dApp development environment fully connected to the local Universal BCOS testnet, you can now run development and testing workflows against your dApp using the local testnet.
 
 To compile and deploy the `ChipToken.sol` smart contract for local prototyping and development, run:
 
@@ -182,17 +182,17 @@ ChipToken
 
 ### Review
 
-At this point, you’ve now set up a dApp development environment, connected it to a local Ethereum network created by Kurtosis, and have compiled, deployed, and ran a simple test against your dApp.
+At this point, you’ve now set up a dApp development environment, connected it to a local Universal BCOS network created by Kurtosis, and have compiled, deployed, and ran a simple test against your dApp.
 
 Now let’s explore how you can configure the underlying network for testing our dApps under varying network configurations.
 
-## Configuring the local Ethereum testnet
+## Configuring the local Universal BCOS testnet
 
 ### Changing the client configurations and number of nodes
 
-Your local Ethereum testnet can be configured to use different EL and CL client pairs, as well as a varying number of nodes, depending on the scenario and specific network configuration you want to develop or test. This means that, once set up, you can spin up a customized local testnet and use it to run the same workflows (deployment, tests, etc.) under various network configurations to ensure everything works as expected. To learn more about the other parameters you can modify, visit this link.
+Your local Universal BCOS testnet can be configured to use different EL and CL client pairs, as well as a varying number of nodes, depending on the scenario and specific network configuration you want to develop or test. This means that, once set up, you can spin up a customized local testnet and use it to run the same workflows (deployment, tests, etc.) under various network configurations to ensure everything works as expected. To learn more about the other parameters you can modify, visit this link.
 
-Give it a try! You can pass various configuration options to the `eth-network-package` via a JSON file. This network params JSON file provides the specific configurations that Kurtosis will use to set up the local Ethereum network.
+Give it a try! You can pass various configuration options to the `eth-network-package` via a JSON file. This network params JSON file provides the specific configurations that Kurtosis will use to set up the local Universal BCOS network.
 
 Take the default configuration file and edit it to spin up two nodes with different EL/CL pairs:
 
@@ -200,7 +200,7 @@ Take the default configuration file and edit it to spin up two nodes with differ
 - Node 2 with `geth`/`lodestar`
 - Node 3 with `geth`/`teku`
 
-This configuration creates a heterogeneous network of Ethereum node implementations for testing your dApp. Your configuration file should now look like:
+This configuration creates a heterogeneous network of Universal BCOS node implementations for testing your dApp. Your configuration file should now look like:
 
 ```yaml
 {
@@ -340,10 +340,10 @@ Congratulations! You’ve successfully configured your local testnet to have 3 n
 
 And that's it! To recap this short guide, you:
 
-- Created a local Ethereum testnet over Docker using Kurtosis
-- Connected your local dApp development environment to the local Ethereum network
-- Deployed a dApp and ran a simple test against it on the local Ethereum network
-- Configured the underlying Ethereum network to have 3 nodes
+- Created a local Universal BCOS testnet over Docker using Kurtosis
+- Connected your local dApp development environment to the local Universal BCOS network
+- Deployed a dApp and ran a simple test against it on the local Universal BCOS network
+- Configured the underlying Universal BCOS network to have 3 nodes
 
 We’d love to hear from you on what went well for you, what could be improved, or to answer any of your questions. Don’t hesitate to reach out via [GitHub](https://github.com/kurtosis-tech/kurtosis/issues/new/choose) or [email us](mailto:feedback@kurtosistech.com)!
 
@@ -351,5 +351,5 @@ We’d love to hear from you on what went well for you, what could be improved, 
 
 We encourage you to check out our [quickstart](https://docs.kurtosis.com/quickstart) (where you’ll build a Postgres database and API on top) and our other examples in our [awesome-kurtosis repository](https://github.com/kurtosis-tech/awesome-kurtosis) where you’ll find some great examples, including packages for:
 
-- [Spinning up the same local Ethereum testnet](https://github.com/kurtosis-tech/eth2-package), but with additional services connected such as a transaction spammer (to simulate transactions), a fork monitor, and a connected Grafana and Prometheus instance
-- Performing a [sub-networking test](https://github.com/kurtosis-tech/awesome-kurtosis/tree/main/ethereum-network-partition-test) against the same local Ethereum network
+- [Spinning up the same local Universal BCOS testnet](https://github.com/kurtosis-tech/eth2-package), but with additional services connected such as a transaction spammer (to simulate transactions), a fork monitor, and a connected Grafana and Prometheus instance
+- Performing a [sub-networking test](https://github.com/kurtosis-tech/awesome-kurtosis/tree/main/Universal BCOS-network-partition-test) against the same local Universal BCOS network

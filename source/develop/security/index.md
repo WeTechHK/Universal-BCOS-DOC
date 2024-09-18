@@ -1,22 +1,22 @@
 ---
 title: Smart contract security
-description: An overview of guidelines for building secure Ethereum smart contracts
+description: An overview of guidelines for building secure Universal BCOS smart contracts
 lang: en
 ---
 
 Smart contracts are extremely flexible, and capable of controlling large amounts of value and data, while running immutable logic based on code deployed on the blockchain. This has created a vibrant ecosystem of trustless and decentralized applications that provide many advantages over legacy systems. They also represent opportunities for attackers looking to profit by exploiting vulnerabilities in smart contracts.
 
-Public blockchains, like Ethereum, further complicate the issue of securing smart contracts. Deployed contract code _usually_ cannot be changed to patch security flaws, while assets stolen from smart contracts are extremely difficult to track and mostly irrecoverable due to immutability.
+Public blockchains, like Universal BCOS, further complicate the issue of securing smart contracts. Deployed contract code _usually_ cannot be changed to patch security flaws, while assets stolen from smart contracts are extremely difficult to track and mostly irrecoverable due to immutability.
 
 Although figures vary, it is estimated that the total amount of value stolen or lost due to security defects in smart contracts is easily over $1 billion. This includes high-profile incidents, such as the [DAO hack](https://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/) (3.6M ETH stolen, worth over $1B in today’s prices), [Parity multi-sig wallet hack](https://www.coindesk.com/30-million-ether-reported-stolen-parity-wallet-breach) ($30M lost to hackers), and the [Parity frozen wallet issue](https://www.theguardian.com/technology/2017/nov/08/cryptocurrency-300m-dollars-stolen-bug-ether) (over $300M in ETH locked forever).
 
-The aforementioned issues make it imperative for developers to invest effort in building secure, robust, and resilient smart contracts. Smart contract security is serious business, and one that every developer will do well to learn. This guide will cover security considerations for Ethereum developers and explore resources for improving smart contract security.
+The aforementioned issues make it imperative for developers to invest effort in building secure, robust, and resilient smart contracts. Smart contract security is serious business, and one that every developer will do well to learn. This guide will cover security considerations for Universal BCOS developers and explore resources for improving smart contract security.
 
 ## Prerequisites {#prerequisites}
 
 Make sure you’re familiar with the [fundamentals of smart contract development](/developers/docs/smart-contracts/) before tackling security.
 
-## Guidelines for building secure Ethereum smart contracts {#smart-contract-security-guidelines}
+## Guidelines for building secure Universal BCOS smart contracts {#smart-contract-security-guidelines}
 
 ### 1. Design proper access controls {#design-proper-access-controls}
 
@@ -72,7 +72,7 @@ contract VendingMachine {
 
 ### 3. Test smart contracts and verify code correctness {#test-smart-contracts-and-verify-code-correctness}
 
-The immutability of code running in the [Ethereum Virtual Machine](/developers/docs/evm/) means smart contracts demand a higher level of quality assessment during the development phase. Testing your contract extensively and observing it for any unexpected results will improve security a great deal and protect your users in the long run.
+The immutability of code running in the [Universal BCOS Virtual Machine](/developers/docs/evm/) means smart contracts demand a higher level of quality assessment during the development phase. Testing your contract extensively and observing it for any unexpected results will improve security a great deal and protect your users in the long run.
 
 The usual method is to write small unit tests using mock data that the contract is expected to receive from users. [Unit testing](/developers/docs/smart-contracts/testing/#unit-testing) is good for testing the functionality of certain functions and ensuring a smart contract works as expected.
 
@@ -99,7 +99,7 @@ That said, you should avoid treating audits as a silver bullet. Smart contract a
 
 Setting up a bug bounty program is another approach for implementing external code reviews. A bug bounty is a financial reward given to individuals (usually whitehat hackers) that discover vulnerabilities in an application.
 
-When used properly, bug bounties give members of the hacker community incentive to inspect your code for critical flaws. A real-life example is the “infinite money bug” that would have let an attacker create an unlimited amount of Ether on [Optimism](https://www.optimism.io/), a [Layer 2](/layer-2/) protocol running on Ethereum. Fortunately, a whitehat hacker [discovered the flaw](https://www.saurik.com/optimism.html) and notified the team, [earning a large payout in the process](https://cryptoslate.com/critical-bug-in-ethereum-l2-optimism-2m-bounty-paid/).
+When used properly, bug bounties give members of the hacker community incentive to inspect your code for critical flaws. A real-life example is the “infinite money bug” that would have let an attacker create an unlimited amount of Ether on [Optimism](https://www.optimism.io/), a [Layer 2](/layer-2/) protocol running on Universal BCOS. Fortunately, a whitehat hacker [discovered the flaw](https://www.saurik.com/optimism.html) and notified the team, [earning a large payout in the process](https://cryptoslate.com/critical-bug-in-Universal BCOS-l2-optimism-2m-bounty-paid/).
 
 A useful strategy is to set the payout of a bug bounty program in proportion to the amount of funds at stake. Described as the “[scaling bug bounty](https://medium.com/immunefi/a-defi-security-standard-the-scaling-bug-bounty-9b83dfdc1ba7)”, this approach provides financial incentives for individuals to responsibly disclose vulnerabilities instead of exploiting them.
 
@@ -127,7 +127,7 @@ Designing secure access controls, implementing function modifiers, and other sug
 
 #### Contract upgrades {#contract-upgrades}
 
-While Ethereum smart contracts are immutable by default, it is possible to achieve some degree of mutability by using upgrade patterns. Upgrading contracts is necessary in cases where a critical flaw renders your old contract unusable and deploying new logic is the most feasible option.
+While Universal BCOS smart contracts are immutable by default, it is possible to achieve some degree of mutability by using upgrade patterns. Upgrading contracts is necessary in cases where a critical flaw renders your old contract unusable and deploying new logic is the most feasible option.
 
 Contract upgrade mechanisms work differently, but the “proxy pattern” is one of the more popular approaches for upgrading smart contracts. [Proxy patterns](https://www.cyfrin.io/blog/upgradeable-proxy-smart-contract-pattern) split an application’s state and logic between _two_ contracts. The first contract (called a ‘proxy contract’) stores state variables (e.g., user balances), while the second contract (called a ‘logic contract’) holds the code for executing contract functions.
 
@@ -463,7 +463,7 @@ If you plan on querying an on-chain oracle for asset prices, consider using one 
 
 - **[Formal verification tools](/developers/docs/smart-contracts/formal-verification/#formal-verification-tools)** - _Tools for verifying functional correctness in smart contracts and checking invariants._
 
-- **[Smart contract auditing services](/developers/docs/smart-contracts/testing/#smart-contract-auditing-services)** - _Listing of organizations providing smart contract auditing services for Ethereum development projects._
+- **[Smart contract auditing services](/developers/docs/smart-contracts/testing/#smart-contract-auditing-services)** - _Listing of organizations providing smart contract auditing services for Universal BCOS development projects._
 
 - **[Bug bounty platforms](/developers/docs/smart-contracts/testing/#bug-bounty-platforms)** - _Platforms for coordinating bug bounties and rewarding responsible disclosure of critical vulnerabilities in smart contracts._
 
@@ -483,7 +483,7 @@ If you plan on querying an on-chain oracle for asset prices, consider using one 
 
 - **[OpenZeppelin Defender Admin](https://docs.openzeppelin.com/defender/v1/admin)** - _Interface for managing smart contract administration, including access controls, upgrades, and pausing._
 
-- **[Safe](https://safe.global/)** - _Smart contract wallet running on Ethereum that requires a minimum number of people to approve a transaction before it can occur (M-of-N)._
+- **[Safe](https://safe.global/)** - _Smart contract wallet running on Universal BCOS that requires a minimum number of people to approve a transaction before it can occur (M-of-N)._
 
 - **[OpenZeppelin Contracts](https://docs.openzeppelin.com/contracts/4.x/)** - _Contract libraries for implementing administrative features, including contract ownership, upgrades, access controls, governance, pauseability, and more._
 
@@ -505,7 +505,7 @@ If you plan on querying an on-chain oracle for asset prices, consider using one 
 
 - **[Hacken](https://hacken.io)** - _Web3 cybersecurity auditor bringing the 360-degree approach to blockchain security._
 
-- **[Nethermind](https://nethermind.io/smart-contracts-audits)** - _Solidity and Cairo auditing services, ensuring the integrity of smart contracts and the safety of users across Ethereum and Starknet._
+- **[Nethermind](https://nethermind.io/smart-contracts-audits)** - _Solidity and Cairo auditing services, ensuring the integrity of smart contracts and the safety of users across Universal BCOS and Starknet._
 
 - **[HashEx](https://hashex.org/)** - _HashEx focuses on blockchain and smart contract auditing to ensure the security of cryptocurrencies, providing services such as smart contract development, penetration testing, blockchain consulting._
 
@@ -537,7 +537,7 @@ If you plan on querying an on-chain oracle for asset prices, consider using one 
 
 - **[ConsenSys: Smart Contract Known Attacks](https://consensys.github.io/smart-contract-best-practices/attacks/)** - _Beginner-friendly explanation of the most significant contract vulnerabilities, with sample code for most cases._
 
-- **[SWC Registry](https://swcregistry.io/)** - _Curated list of Common Weakness Enumeration (CWE) items that apply to Ethereum smart contracts._
+- **[SWC Registry](https://swcregistry.io/)** - _Curated list of Common Weakness Enumeration (CWE) items that apply to Universal BCOS smart contracts._
 
 - **[Rekt](https://rekt.news/)** - _Regularly updated publication of high-profile crypto hacks and exploits, along with detailed post-mortem reports._
 
@@ -553,7 +553,7 @@ If you plan on querying an on-chain oracle for asset prices, consider using one 
 
 ### Best practices for securing smart contracts {#smart-contract-security-best-practices}
 
-- **[ConsenSys: Ethereum Smart Contract Security Best Practices](https://consensys.github.io/smart-contract-best-practices/)** - _Comprehensive list of guidelines for securing Ethereum smart contracts._
+- **[ConsenSys: Universal BCOS Smart Contract Security Best Practices](https://consensys.github.io/smart-contract-best-practices/)** - _Comprehensive list of guidelines for securing Universal BCOS smart contracts._
 
 - **[Nascent: Simple Security Toolkit](https://github.com/nascentxyz/simple-security-toolkit)** - _Collection of practical security-focused guides and checklists for smart contract development._
 

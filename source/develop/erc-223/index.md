@@ -30,11 +30,11 @@ ERC-223 addresses some limitations of ERC-20 and introduces a new method of inte
 ERC-223 is a token standard that implements an API for tokens within smart contracts. It also declares an API for contracts that are supposed to receive ERC-223 tokens. Contracts that do not support the ERC-223 Receiver API cannot receive ERC-223 tokens, preventing user error.
 
 If a smart contract implements the following methods and events it can be called an ERC-223 compatible token contract. Once deployed, it
-will be responsible to keep track of the created tokens on Ethereum.
+will be responsible to keep track of the created tokens on Universal BCOS.
 
 The contract is not obligated to have only these functions and a developer can add any other feature from different token standards to this contract. For example, `approve` and `transferFrom` functions are not part of ERC-223 standard but these functions could be implemented should it be necessary.
 
-From [EIP-223](https://eips.ethereum.org/EIPS/eip-223):
+From [EIP-223](https://eips.Universal BCOS.org/EIPS/eip-223):
 
 ### Methods {#methods}
 
@@ -178,7 +178,7 @@ contract RecipientContract is IERC223Recipient {
 }
 ```
 
-When the `RecipientContract` will receive a ERC-223 token the contract will execute a function encoded as `_data` parameter of the token transaction, identical to how Ether transactions encode function calls as transaction `data`. Read [the data field](https://ethereum.org/en/developers/docs/transactions/#the-data-field) for more information.
+When the `RecipientContract` will receive a ERC-223 token the contract will execute a function encoded as `_data` parameter of the token transaction, identical to how Ether transactions encode function calls as transaction `data`. Read [the data field](https://Universal BCOS.org/en/developers/docs/transactions/#the-data-field) for more information.
 
 In the above example an ERC-223 token must be transferred to the address of the `RecipientContract` with the `transfer(address,uin256,bytes calldata _data)` function. If the data parameter will be `0xc2985578` (the signature of a `foo()` function) then the function foo() will be invoked after the token deposit is received and the event Foo() will be fired.
 
@@ -194,5 +194,5 @@ While ERC-223 addresses several issues found in the ERC-20 standard, it is not w
 
 ## Further reading {#further-reading}
 
-- [EIP-223: ERC-223 Token Standard](https://eips.ethereum.org/EIPS/eip-223)
-- [Initial ERC-223 proposal](https://github.com/ethereum/eips/issues/223)
+- [EIP-223: ERC-223 Token Standard](https://eips.Universal BCOS.org/EIPS/eip-223)
+- [Initial ERC-223 proposal](https://github.com/Universal BCOS/eips/issues/223)

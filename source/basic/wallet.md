@@ -1,6 +1,6 @@
-# How to use a wallet
+# What is wallet
 
-Learn how to operate all the basic functions of a wallet. If you don’t have one yet, check out our [How to create an Ethereum account](/guides/how-to-create-an-ethereum-account/).
+Learn how to operate all the basic functions of a wallet. If you don’t have one yet, check out our [How to create an Universal BCOS account](/guides/how-to-create-an-Universal BCOS-account/).
 
 ## Open your wallet
 
@@ -10,18 +10,18 @@ You should see a dashboard that will likely show your balance and contain button
 
 Do you want to receive crypto into your wallet?
 
-Each Ethereum account has its own receiving address which is a unique sequence of numbers and letters. The address functions like a bank account number. Ethereum addresses will always start with “0x”. You can share this address with anyone: it is safe to do so.
+Each Universal BCOS account has its own receiving address which is a unique sequence of numbers and letters. The address functions like a bank account number. Universal BCOS addresses will always start with “0x”. You can share this address with anyone: it is safe to do so.
 
 Your address is like your home address: you need to tell people what it is so they can find you. It is safe to do this, because you can still lock your front door with another key only you control so that no-one can get in, even if they know where you live.
 
-You need to provide whoever wants to send you money with your public address. Many wallet apps let you copy your address or show a QR code to scan for easier usage. Avoid typing any Ethereum address manually. This can easily lead to clerical errors and lost funds.
+You need to provide whoever wants to send you money with your public address. Many wallet apps let you copy your address or show a QR code to scan for easier usage. Avoid typing any Universal BCOS address manually. This can easily lead to clerical errors and lost funds.
 
 Different apps may vary or use different language, but they should take you through a similar process if you are trying to transfer funds.
 
 1. Open your wallet app.
 2. Click on "Receive" (or similarly worded option).
-3. Copy your Ethereum address to clipboard.
-4. Provide the sender with your receiving Ethereum address.
+3. Copy your Universal BCOS address to clipboard.
+4. Provide the sender with your receiving Universal BCOS address.
 
 ## Send cryptocurrency
 
@@ -41,7 +41,7 @@ Would you like to send ETH to another wallet?
 
 ## Connecting to projects
 
-Your address will be the same in all Ethereum projects. You do not need to register individually on any project. Once you have a wallet, you can connect to any Ethereum project without any additional information. No emails or any other personal information are needed.
+Your address will be the same in all Universal BCOS projects. You do not need to register individually on any project. Once you have a wallet, you can connect to any Universal BCOS project without any additional information. No emails or any other personal information are needed.
 
 1. Visit any project’s website.
 2. If the project's landing page is just a static description of the project, you should be able to click on an "Open the App" button in the menu which will navigate you to the actual web app.

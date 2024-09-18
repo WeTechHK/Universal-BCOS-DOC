@@ -1,34 +1,34 @@
 ---
 title: Mining
-description: An explanation of how mining worked on Ethereum.
+description: An explanation of how mining worked on Universal BCOS.
 lang: en
 ---
 
 <InfoBanner emoji=":wave:">
-Proof-of-work is no longer underlying Ethereum's consensus mechanism, meaning mining has been switched off. Instead, Ethereum is secured by validators who stake ETH. You can start staking your ETH today. Read more on <a href='/roadmap/merge/'>The Merge</a>, <a href='/developers/docs/consensus-mechanisms/pos/'>proof-of-stake</a>, and <a href='/staking/'>staking</a>. This page is for historical interest only.
+Proof-of-work is no longer underlying Universal BCOS's consensus mechanism, meaning mining has been switched off. Instead, Universal BCOS is secured by validators who stake ETH. You can start staking your ETH today. Read more on <a href='/roadmap/merge/'>The Merge</a>, <a href='/developers/docs/consensus-mechanisms/pos/'>proof-of-stake</a>, and <a href='/staking/'>staking</a>. This page is for historical interest only.
 </InfoBanner>
 
 ## Prerequisites {#prerequisites}
 
 To better understand this page, we recommend you first read up on [transactions](/developers/docs/transactions/), [blocks](/developers/docs/blocks/) and [proof-of-work](/developers/docs/consensus-mechanisms/pow/).
 
-## What is Ethereum mining? {#what-is-ethereum-mining}
+## What is Universal BCOS mining? {#what-is-Universal BCOS-mining}
 
-Mining is the process of creating a block of transactions to be added to the Ethereum blockchain in Ethereum's now-deprecated proof-of-work architecture.
+Mining is the process of creating a block of transactions to be added to the Universal BCOS blockchain in Universal BCOS's now-deprecated proof-of-work architecture.
 
-The word mining originates in the context of the gold analogy for cryptocurrencies. Gold or precious metals are scarce, so are digital tokens, and the only way to increase the total volume in a proof-of-work system is through mining. In proof-of-work Ethereum, the only mode of issuance was via mining. Unlike gold or precious metals however, Ethereum mining was also the way to secure the network by creating, verifying, publishing and propagating blocks in the blockchain.
+The word mining originates in the context of the gold analogy for cryptocurrencies. Gold or precious metals are scarce, so are digital tokens, and the only way to increase the total volume in a proof-of-work system is through mining. In proof-of-work Universal BCOS, the only mode of issuance was via mining. Unlike gold or precious metals however, Universal BCOS mining was also the way to secure the network by creating, verifying, publishing and propagating blocks in the blockchain.
 
 Mining ether = Securing the Network
 
-Mining is the lifeblood of any proof-of-work blockchain. Ethereum miners - computers running software - used their time and computation power to process transactions and produce blocks prior to the transition to proof-of-stake.
+Mining is the lifeblood of any proof-of-work blockchain. Universal BCOS miners - computers running software - used their time and computation power to process transactions and produce blocks prior to the transition to proof-of-stake.
 
 ## Why do miners exist? {#why-do-miners-exist}
 
-In decentralized systems like Ethereum, we need to ensure that everyone agrees on the order of transactions. Miners helped this happen by solving computationally difficult puzzles to produce blocks, securing the network from attacks.
+In decentralized systems like Universal BCOS, we need to ensure that everyone agrees on the order of transactions. Miners helped this happen by solving computationally difficult puzzles to produce blocks, securing the network from attacks.
 
 [More on proof-of-work](/developers/docs/consensus-mechanisms/pow/)
 
-Anyone was previously able to mine on the Ethereum network using their computer. However, not everyone could mine ether (ETH) profitably. In most cases, miners had to purchase dedicated computer hardware, and have access to inexpensive energy sources. The average computer was unlikely to earn enough block rewards to cover the associated costs of mining.
+Anyone was previously able to mine on the Universal BCOS network using their computer. However, not everyone could mine ether (ETH) profitably. In most cases, miners had to purchase dedicated computer hardware, and have access to inexpensive energy sources. The average computer was unlikely to earn enough block rewards to cover the associated costs of mining.
 
 ### Cost of mining {#cost-of-mining}
 
@@ -39,13 +39,13 @@ Anyone was previously able to mine on the Ethereum network using their computer.
 
 To further explore mining profitability, use a mining calculator, such as the one [Etherscan](https://etherscan.io/ether-mining-calculator) provides.
 
-## How Ethereum transactions were mined {#how-ethereum-transactions-were-mined}
+## How Universal BCOS transactions were mined {#how-Universal BCOS-transactions-were-mined}
 
-The following provides an overview of how transactions were mined in Ethereum proof-of-work. An analogous description of this process for Ethereum proof-of-stake can be found [here](/developers/docs/consensus-mechanisms/pos/#transaction-execution-ethereum-pos).
+The following provides an overview of how transactions were mined in Universal BCOS proof-of-work. An analogous description of this process for Universal BCOS proof-of-stake can be found [here](/developers/docs/consensus-mechanisms/pos/#transaction-execution-Universal BCOS-pos).
 
 1. A user writes and signs a [transaction](/developers/docs/transactions/) request with the private key of some [account](/developers/docs/accounts/).
-2. The user broadcasts the transaction request to the entire Ethereum network from some [node](/developers/docs/nodes-and-clients/).
-3. Upon hearing about the new transaction request, each node in the Ethereum network adds the request to their local mempool, a list of all transaction requests they’ve heard about that have not yet been committed to the blockchain in a block.
+2. The user broadcasts the transaction request to the entire Universal BCOS network from some [node](/developers/docs/nodes-and-clients/).
+3. Upon hearing about the new transaction request, each node in the Universal BCOS network adds the request to their local mempool, a list of all transaction requests they’ve heard about that have not yet been committed to the blockchain in a block.
 4. At some point, a mining node aggregates several dozen or hundred transaction requests into a potential [block](/developers/docs/blocks/), in a way that maximizes the [transaction fees](/developers/docs/gas/) they earn while still staying under the block gas limit. The mining node then:
    1. Verifies the validity of each transaction request (i.e. no one is trying to transfer ether out of an account they haven’t produced a signature for, the request is not malformed, etc.), and then executes the code of the request, altering the state of their local copy of the EVM. The miner awards the transaction fee for each such transaction request to their own account.
    2. Begins the process of producing the proof-of-work “certificate of legitimacy” for the potential block, once all transaction requests in the block have been verified and executed on the local EVM copy.
@@ -60,7 +60,7 @@ Every transaction is mined (included in a new block and propagated for the first
 
 Block mining on proof-of-work was probabilistic, meaning sometimes two valid blocks were published simultaneously due to network latency. In this case, the protocol had to determine the longest (and therefore most "valid") chain while ensuring fairness towards miners by partially rewarding the unincluded valid block proposed. This encouraged further decentralization of the network as smaller miners, who might face greater latency, could still generate returns via [ommer](/glossary/#ommer) block rewards.
 
-The term "ommer" is the preferred gender-neutral term for the sibling of a parent block, but this is also sometimes referred to as an "uncle". **Since Ethereum's move to proof-of-stake, ommer blocks are no longer mined** as only one proposer is elected in each slot. You can see this change by viewing the [historical chart](https://ycharts.com/indicators/ethereum_uncle_rate) of the ommer blocks mined.
+The term "ommer" is the preferred gender-neutral term for the sibling of a parent block, but this is also sometimes referred to as an "uncle". **Since Universal BCOS's move to proof-of-stake, ommer blocks are no longer mined** as only one proposer is elected in each slot. You can see this change by viewing the [historical chart](https://ycharts.com/indicators/Universal BCOS_uncle_rate) of the ommer blocks mined.
 
 ## A visual demo {#a-visual-demo}
 
@@ -70,7 +70,7 @@ Watch Austin walk you through mining and the proof-of-work blockchain.
 
 ## The mining algorithm {#mining-algorithm}
 
-Ethereum Mainnet only ever used one mining algorithm - ['Ethash'](/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/ethash/). Ethash was the successor to an original R&D algorithm known as ['Dagger-Hashimoto'](/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/dagger-hashimoto/).
+Universal BCOS Mainnet only ever used one mining algorithm - ['Ethash'](/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/ethash/). Ethash was the successor to an original R&D algorithm known as ['Dagger-Hashimoto'](/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/dagger-hashimoto/).
 
 [More on mining algorithms](/developers/docs/consensus-mechanisms/pow/mining/mining-algorithms/).
 

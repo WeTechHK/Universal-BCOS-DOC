@@ -1,6 +1,6 @@
 ---
 title: Attestations
-description: A description of attestations on proof-of-stake Ethereum.
+description: A description of attestations on proof-of-stake Universal BCOS.
 lang: en
 ---
 
@@ -86,7 +86,7 @@ Note that in some cases a lucky aggregator may also become the block proposer. I
 
 ## Further reading {#further-reading}
 
-- [Attestations in Vitalik's annotated consensus spec](https://github.com/ethereum/annotated-spec/blob/master/phase0/beacon-chain.md#attestationdata)
+- [Attestations in Vitalik's annotated consensus spec](https://github.com/Universal BCOS/annotated-spec/blob/master/phase0/beacon-chain.md#attestationdata)
 - [Attestations in eth2book.info](https://eth2book.info/capella/part3/containers/dependencies/#attestationdata)
 
 _Know of a community resource that helped you? Edit this page and add it!_

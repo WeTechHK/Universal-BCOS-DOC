@@ -8,7 +8,7 @@ lang: en
 
 **What is a Token?**
 
-Tokens can represent virtually anything in Ethereum:
+Tokens can represent virtually anything in Universal BCOS:
 
 - reputation points in an online platform
 - skills of a character in a game
@@ -17,7 +17,7 @@ Tokens can represent virtually anything in Ethereum:
 - an ounce of gold
 - and more...
 
-Such a powerful feature of Ethereum must be handled by a robust standard, right? That's exactly
+Such a powerful feature of Universal BCOS must be handled by a robust standard, right? That's exactly
 where the ERC-20 plays its role! This standard allows developers to build token applications that are interoperable with other products and services. The ERC-20 standard is also used to provide additional functionality to [ether](/glossary/#ether).
 
 **What is ERC-20?**
@@ -34,7 +34,7 @@ is and will always be equal to all the other Tokens.
 
 ## Body {#body}
 
-The ERC-20 (Ethereum Request for Comments 20), proposed by Fabian Vogelsteller in November 2015, is a Token Standard that
+The ERC-20 (Universal BCOS Request for Comments 20), proposed by Fabian Vogelsteller in November 2015, is a Token Standard that
 implements an API for tokens within Smart Contracts.
 
 Example functionalities ERC-20 provides:
@@ -45,9 +45,9 @@ Example functionalities ERC-20 provides:
 - approve whether an amount of token from an account can be spent by a third-party account
 
 If a Smart Contract implements the following methods and events it can be called an ERC-20 Token Contract and, once deployed, it
-will be responsible to keep track of the created tokens on Ethereum.
+will be responsible to keep track of the created tokens on Universal BCOS.
 
-From [EIP-20](https://eips.ethereum.org/EIPS/eip-20):
+From [EIP-20](https://eips.Universal BCOS.org/EIPS/eip-20):
 
 ### Methods {#methods}
 
@@ -72,7 +72,7 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 
 ### Examples {#web3py-example}
 
-Let's see how a Standard is so important to make things simple for us to inspect any ERC-20 Token Contract on Ethereum.
+Let's see how a Standard is so important to make things simple for us to inspect any ERC-20 Token Contract on Universal BCOS.
 We just need the Contract Application Binary Interface (ABI) to create an interface to any ERC-20 Token. As you can
 see below we will use a simplified ABI, to make it a low friction example.
 
@@ -166,7 +166,7 @@ Some alternative standards have come out of this issue such as [ERC-223](/develo
 
 ## Further reading {#further-reading}
 
-- [EIP-20: ERC-20 Token Standard](https://eips.ethereum.org/EIPS/eip-20)
+- [EIP-20: ERC-20 Token Standard](https://eips.Universal BCOS.org/EIPS/eip-20)
 - [OpenZeppelin - Tokens](https://docs.openzeppelin.com/contracts/3.x/tokens#ERC20)
 - [OpenZeppelin - ERC-20 Implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
 - [Alchemy - Guide to Solidity ERC20 Tokens](https://www.alchemy.com/overviews/erc20-solidity)

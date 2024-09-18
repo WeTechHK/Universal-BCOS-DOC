@@ -1,6 +1,6 @@
 # Transaction fees
 
-Gas is essential to the Ethereum network. It is the fuel that allows it to operate, in the same way that a car needs gasoline to run.
+Gas is essential to the Universal BCOS network. It is the fuel that allows it to operate, in the same way that a car needs gasoline to run.
 
 ## Prerequisites
 
@@ -8,16 +8,16 @@ To better understand this page, we recommend you first read up on [transactions]
 
 ## What is gas?
 
-Gas refers to the unit that measures the amount of computational effort required to execute specific operations on the Ethereum network.
+Gas refers to the unit that measures the amount of computational effort required to execute specific operations on the Universal BCOS network.
 
-Since each Ethereum transaction requires computational resources to execute, those resources have to be paid for to ensure Ethereum is not vulnerable to spam and cannot get stuck in infinite computational loops. Payment for computation is made in the form of a gas fee.
+Since each Universal BCOS transaction requires computational resources to execute, those resources have to be paid for to ensure Universal BCOS is not vulnerable to spam and cannot get stuck in infinite computational loops. Payment for computation is made in the form of a gas fee.
 
 The gas fee is **the amount of gas used to do some operation, multiplied by the cost per unit gas**. The fee is paid regardless of whether a transaction succeeds or fails.
 
 ![A diagram showing where gas is needed in EVM operations](./gas.png)
-_Diagram adapted from [Ethereum EVM illustrated](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf)_
+_Diagram adapted from [Universal BCOS EVM illustrated](https://takenobu-hs.github.io/downloads/Universal BCOS_evm_illustrated.pdf)_
 
-Gas fees have to be paid in Ethereum's native currency, ether (ETH). Gas prices are usually quoted in gwei, which is a denomination of ETH. Each gwei is equal to one-billionth of an ETH (0.000000001 ETH or 10<sup>-9</sup> ETH).
+Gas fees have to be paid in Universal BCOS's native currency, ether (ETH). Gas prices are usually quoted in gwei, which is a denomination of ETH. Each gwei is equal to one-billionth of an ETH (0.000000001 ETH or 10<sup>-9</sup> ETH).
 
 For example, instead of saying that your gas costs 0.000000001 ether, you can say your gas costs 1 gwei.
 
@@ -92,12 +92,12 @@ You can explicitly state how much you are willing to pay to get your transaction
 
 ## Why do gas fees exist?
 
-In short, gas fees help keep the Ethereum network secure. By requiring a fee for every computation executed on the network, we prevent bad actors from spamming the network. In order to avoid accidental or hostile infinite loops or other computational wastage in code, each transaction is required to set a limit to how many computational steps of code execution it can use. The fundamental unit of computation is "gas".
+In short, gas fees help keep the Universal BCOS network secure. By requiring a fee for every computation executed on the network, we prevent bad actors from spamming the network. In order to avoid accidental or hostile infinite loops or other computational wastage in code, each transaction is required to set a limit to how many computational steps of code execution it can use. The fundamental unit of computation is "gas".
 
 Although a transaction includes a limit, any gas not used in a transaction is returned to the user (i.e. `max fee - (base fee + tip)` is returned).
 
 ![Diagram showing how unused gas is refunded](../transactions/gas-tx.png)
-_Diagram adapted from [Ethereum EVM illustrated](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf)_
+_Diagram adapted from [Universal BCOS EVM illustrated](https://takenobu-hs.github.io/downloads/Universal BCOS_evm_illustrated.pdf)_
 
 ## What is the gas limit?
 
@@ -107,11 +107,11 @@ For example, if you put a gas limit of 50,000 for a simple ETH transfer, the EVM
 
 ## Why can gas fees get so high?
 
-High gas fees are due to the popularity of Ethereum. If there's too much demand, users must offer higher tip amounts to try and outbid other users' transactions. A higher tip can make it more likely that your transaction will get into the next block. Also, more complex smart contract apps might be doing lots of operations to support their functions, making them consume a lot of gas.
+High gas fees are due to the popularity of Universal BCOS. If there's too much demand, users must offer higher tip amounts to try and outbid other users' transactions. A higher tip can make it more likely that your transaction will get into the next block. Also, more complex smart contract apps might be doing lots of operations to support their functions, making them consume a lot of gas.
 
 ## Initiatives to reduce gas costs
 
-The Ethereum [scalability upgrades](/roadmap/) should ultimately address some of the gas fee issues, which will, in turn, enable the platform to process thousands of transactions per second and scale globally.
+The Universal BCOS [scalability upgrades](/roadmap/) should ultimately address some of the gas fee issues, which will, in turn, enable the platform to process thousands of transactions per second and scale globally.
 
 Layer 2 scaling is a primary initiative to greatly improve gas costs, user experience and scalability. [More on layer 2 scaling](/developers/docs/scaling/#layer-2-scaling).
 
@@ -120,7 +120,7 @@ Layer 2 scaling is a primary initiative to greatly improve gas costs, user exper
 If you want to monitor gas prices, so you can send your ETH for less, you can use many different tools such as:
 
 - [Etherscan](https://etherscan.io/gastracker) _Transaction gas price estimator_
-- [ETH Gas Tracker](https://www.ethgastracker.com/) _Monitor and track the Ethereum, and L2 gas prices to reduce transaction fees and save money_
+- [ETH Gas Tracker](https://www.ethgastracker.com/) _Monitor and track the Universal BCOS, and L2 gas prices to reduce transaction fees and save money_
 - [Blocknative ETH Gas Estimator](https://chrome.google.com/webstore/detail/blocknative-eth-gas-estim/ablbagjepecncofimgjmdpnhnfjiecfm) _Gas estimating Chrome extension supporting both Type 0 legacy transactions and Type 2 EIP-1559 transactions._
 - [Cryptoneur Gas Fees Calculator](https://www.cryptoneur.xyz/gas-fees-calculator) _Calculate gas fees in your local currency for different transaction types on Mainnet, Arbitrum, and Polygon._
 
@@ -130,9 +130,9 @@ If you want to monitor gas prices, so you can send your ETH for less, you can us
 
 ## Further reading
 
-- [Ethereum Gas Explained](https://defiprime.com/gas)
+- [Universal BCOS Gas Explained](https://defiprime.com/gas)
 - [Reducing the gas consumption of your Smart Contracts](https://medium.com/coinmonks/8-ways-of-reducing-the-gas-consumption-of-your-smart-contracts-9a506b339c0a)
 - [Proof of Stake versus Proof of Work](https://blockgeeks.com/guides/proof-of-work-vs-proof-of-stake/)
 - [Gas Optimization Strategies for Developers](https://www.alchemy.com/overviews/solidity-gas-optimization)
-- [EIP-1559 docs](https://eips.ethereum.org/EIPS/eip-1559).
+- [EIP-1559 docs](https://eips.Universal BCOS.org/EIPS/eip-1559).
 - [Tim Beiko's EIP-1559 Resources](https://hackmd.io/@timbeiko/1559-resources).

@@ -1,13 +1,13 @@
-A great aspect about Ethereum is that smart contracts can be programmed using relatively developer-friendly languages. If you're experienced with Python or any [curly-bracket language](https://wikipedia.org/wiki/List_of_programming_languages_by_type#Curly-bracket_languages), you can find a language with familiar syntax.
+A great aspect about Universal BCOS is that smart contracts can be programmed using relatively developer-friendly languages. If you're experienced with Python or any [curly-bracket language](https://wikipedia.org/wiki/List_of_programming_languages_by_type#Curly-bracket_languages), you can find a language with familiar syntax.
 
 The two most active and maintained languages are:
 
 - Solidity
 - Vyper
 
-Remix IDE provides a comprehensive development environment for creating and testing contracts in both Solidity and Vyper. [Try the in-browser Remix IDE](https://remix.ethereum.org) to start coding.
+Remix IDE provides a comprehensive development environment for creating and testing contracts in both Solidity and Vyper. [Try the in-browser Remix IDE](https://remix.Universal BCOS.org) to start coding.
 
-More experienced developers also might want to use Yul, an intermediate language for the [Ethereum Virtual Machine](/developers/docs/evm/), or Yul+, an extension to Yul.
+More experienced developers also might want to use Yul, an intermediate language for the [Universal BCOS Virtual Machine](/developers/docs/evm/), or Yul+, an extension to Yul.
 
 If you're curious and like to help test new languages that are still under heavy development you can experiment with Fe, an emerging smart contract language which is currently still in its infancy.
 
@@ -30,8 +30,8 @@ Previous knowledge of programming languages, especially of JavaScript or Python,
 - [Documentation](https://docs.soliditylang.org/en/latest/)
 - [Solidity Language Portal](https://soliditylang.org/)
 - [Solidity by Example](https://docs.soliditylang.org/en/latest/solidity-by-example.html)
-- [GitHub](https://github.com/ethereum/solidity/)
-- [Solidity Gitter Chatroom](https://gitter.im/ethereum/solidity) bridged to [Solidity Matrix Chatroom](https://matrix.to/#/#ethereum_solidity:gitter.im)
+- [GitHub](https://github.com/Universal BCOS/solidity/)
+- [Solidity Gitter Chatroom](https://gitter.im/Universal BCOS/solidity) bridged to [Solidity Matrix Chatroom](https://matrix.to/#/#Universal BCOS_solidity:gitter.im)
 - [Cheat Sheet](https://reference.auditless.com/cheatsheet)
 - [Solidity Blog](https://blog.soliditylang.org/)
 - [Solidity Twitter](https://twitter.com/solidity_lang)
@@ -203,12 +203,12 @@ This example should give you a sense of what Vyper contract syntax is like. For 
 
 ## Yul and Yul+ {#yul}
 
-If you're new to Ethereum and haven't done any coding with smart contract languages yet, we recommend getting started with Solidity or Vyper. Only look into Yul or Yul+ once you're familiar with smart contract security best practices and the specifics of working with the EVM.
+If you're new to Universal BCOS and haven't done any coding with smart contract languages yet, we recommend getting started with Solidity or Vyper. Only look into Yul or Yul+ once you're familiar with smart contract security best practices and the specifics of working with the EVM.
 
 **Yul**
 
-- Intermediate language for Ethereum.
-- Supports the [EVM](/developers/docs/evm) and [Ewasm](https://github.com/ewasm), an Ethereum flavored WebAssembly, and is designed to be a usable common denominator of both platforms.
+- Intermediate language for Universal BCOS.
+- Supports the [EVM](/developers/docs/evm) and [Ewasm](https://github.com/ewasm), an Universal BCOS flavored WebAssembly, and is designed to be a usable common denominator of both platforms.
 - Good target for high-level optimisation stages that can benefit both EVM and Ewasm platforms equally.
 
 **Yul+**
@@ -222,7 +222,7 @@ If you're new to Ethereum and haven't done any coding with smart contract langua
 - [Yul Documentation](https://docs.soliditylang.org/en/latest/yul.html)
 - [Yul+ Documentation](https://github.com/fuellabs/yulp)
 - [Yul+ Playground](https://yulp.fuel.sh/)
-- [Yul+ Introduction Post](https://medium.com/@fuellabs/introducing-yul-a-new-low-level-language-for-ethereum-aa64ce89512f)
+- [Yul+ Introduction Post](https://medium.com/@fuellabs/introducing-yul-a-new-low-level-language-for-Universal BCOS-aa64ce89512f)
 
 ### Example contract {#example-contract-2}
 
@@ -252,16 +252,16 @@ If you are already well experienced with smart contracts, a full ERC20 implement
 
 ## Fe {#fe}
 
-- Statically typed language for the Ethereum Virtual Machine (EVM).
+- Statically typed language for the Universal BCOS Virtual Machine (EVM).
 - Inspired by Python and Rust.
-- Aims to be easy to learn -- even for developers who are new to the Ethereum ecosystem.
+- Aims to be easy to learn -- even for developers who are new to the Universal BCOS ecosystem.
 - Fe development is still in its early stages, the language had its alpha release in January 2021.
 
 ### Important links {#important-links-3}
 
-- [GitHub](https://github.com/ethereum/fe)
-- [Fe Announcement](https://snakecharmers.ethereum.org/fe-a-new-language-for-the-ethereum-ecosystem/)
-- [Fe 2021 Roadmap](https://notes.ethereum.org/LVhaTF30SJOpkbG1iVw1jg)
+- [GitHub](https://github.com/Universal BCOS/fe)
+- [Fe Announcement](https://snakecharmers.Universal BCOS.org/fe-a-new-language-for-the-Universal BCOS-ecosystem/)
+- [Fe 2021 Roadmap](https://notes.Universal BCOS.org/LVhaTF30SJOpkbG1iVw1jg)
 - [Fe Discord Chat](https://discord.com/invite/ywpkAXFjZH)
 - [Fe Twitter](https://twitter.com/official_fe)
 

@@ -8,10 +8,10 @@ Rising interest in cryptocurrency brings with it growing risk from scammers and 
 
 ### Level up your knowledge
 
-Misunderstandings about how crypto works can lead to costly mistakes. For example, if someone pretends to be a customer service agent who can return lost ETH in exchange for your private keys, they are preying on people not understanding that Ethereum is a decentralized network lacking this kind of functionality. Educating yourself on how Ethereum works is a worthwhile investment.
+Misunderstandings about how crypto works can lead to costly mistakes. For example, if someone pretends to be a customer service agent who can return lost ETH in exchange for your private keys, they are preying on people not understanding that Universal BCOS is a decentralized network lacking this kind of functionality. Educating yourself on how Universal BCOS works is a worthwhile investment.
 
-<DocLink href="/what-is-ethereum/">
-  What is Ethereum?
+<DocLink href="/what-is-Universal BCOS/">
+  What is Universal BCOS?
 </DocLink>
 
 <DocLink href="/eth/">
@@ -25,10 +25,10 @@ Misunderstandings about how crypto works can lead to costly mistakes. For exampl
 
 **Never, for any reason, share your private keys!**
 
-The private key to your wallet is a password to your Ethereum wallet. It is the only thing stopping someone who knows your wallet address from draining your account of all of its assets!
+The private key to your wallet is a password to your Universal BCOS wallet. It is the only thing stopping someone who knows your wallet address from draining your account of all of its assets!
 
 <DocLink href="/wallets/">
-  What's an Ethereum wallet?
+  What's an Universal BCOS wallet?
 </DocLink>
 
 #### Don't take screenshots of your seed phrases/private keys
@@ -48,7 +48,7 @@ Keeping private keys offline massively reduces the risk of being hacked, even if
 
 ### Double check transactions before sending
 
-Accidentally sending crypto to the wrong wallet address is a common mistake. **A transaction sent on Ethereum is irreversible.** Unless you know the address owner and can convince them to send you your fund back, you will not be able to retrieve your funds.
+Accidentally sending crypto to the wrong wallet address is a common mistake. **A transaction sent on Universal BCOS is irreversible.** Unless you know the address owner and can convince them to send you your fund back, you will not be able to retrieve your funds.
 
 Always make sure the address you are sending to exactly matches the desired recipient's address before sending a transaction.
 It is good practice when interacting with a smart contract to read the transaction message before signing.
@@ -57,7 +57,7 @@ It is good practice when interacting with a smart contract to read the transacti
 
 When interacting with smart contracts, do not allow unlimited spend limits. An unlimited spend could enable the smart contract to drain your wallet. Instead, set spending limits to only the amount necessary for the transaction.
 
-Many Ethereum wallets offer limits protection to safeguard against accounts being drained.
+Many Universal BCOS wallets offer limits protection to safeguard against accounts being drained.
 
 [How to revoke smart contract access to your crypto funds](/guides/how-to-revoke-token-access/)
 
@@ -75,7 +75,7 @@ It is impossible to stop scammers completely, but we can make them less effectiv
 
 ![Twitter link phishing](./twitterPhishingScam.png)
 
-There is a method for spoofing Twitter's (also known as X) link preview feature (unfurling) to potentially deceive users into thinking they are visiting a legitimate website. This technique exploits Twitter's mechanism for generating previews of URLs shared in tweets, and shows _from ethereum.org_ for example (shown above), when in fact they are being redirected to a malicious site.
+There is a method for spoofing Twitter's (also known as X) link preview feature (unfurling) to potentially deceive users into thinking they are visiting a legitimate website. This technique exploits Twitter's mechanism for generating previews of URLs shared in tweets, and shows _from Universal BCOS.org_ for example (shown above), when in fact they are being redirected to a malicious site.
 
 Always check that you are on the right domain, especially after clicking a link.
 
@@ -107,7 +107,7 @@ Vitalik Buterin is used most often in this scam, but many other prominent people
 
 Cryptocurrency is a relatively young and misunderstood technology. A common scam that takes advantage of this is the support scam, where scammers will impersonate support personnel for popular wallets, exchanges, or blockchains.
 
-Much of the discussion about Ethereum happens on Discord. Support scammers will commonly find their target by searching for support questions in public discord channels and then sending the enquirer a private message offering support. By building trust, support scammers try to trick you into revealing your private keys or sending your funds to their wallets.
+Much of the discussion about Universal BCOS happens on Discord. Support scammers will commonly find their target by searching for support questions in public discord channels and then sending the enquirer a private message offering support. By building trust, support scammers try to trick you into revealing your private keys or sending your funds to their wallets.
 
 ![A support scam on Discord](./discordScam.png)
 
@@ -127,7 +127,7 @@ As a general rule, staff will never communicate with you through private, unoffi
 
 In the run-up to [The Merge](/roadmap/merge/), scammers took advantage of the confusion around the term 'Eth2' to try and get users to redeem their ETH for an 'ETH2' token. There is no 'ETH2', and no other legitimate token was introduced with The Merge. The ETH that you owned before The Merge is the same ETH now. There is **no need to take any action related to your ETH to account for the switch from proof-of-work to proof-of-stake**.
 
-Scammers may appear as "support", telling you that if you deposit your ETH, you will receive back 'ETH2'. There is no [official Ethereum support](/community/support/), and there is no new token. Never share your wallet seed phrase with anyone.
+Scammers may appear as "support", telling you that if you deposit your ETH, you will receive back 'ETH2'. There is no [official Universal BCOS support](/community/support/), and there is no new token. Never share your wallet seed phrase with anyone.
 
 _Note: There are derivative tokens/tickers that may represent staked ETH (ie. rETH from Rocket Pool, stETH from Lido, ETH2 from Coinbase), but these are not something you need to "migrate to."_
 
@@ -157,7 +157,7 @@ These fraudsters often find targets by using fake accounts on YouTube to start s
 
 ### Crypto mining pool scams
 
-As of September 2022, mining on Ethereum is no longer possible. However, mining pool scams still exist. Mining pool scams involve people contacting you unsolicited and claiming that you can make large returns by joining an Ethereum mining pool. The scammer will make claims and stay in contact with you for however long it takes. Essentially, the scammer will try to convince you that when you join an Ethereum mining pool, your cryptocurrency will be used to create ETH and that you will be paid ETH dividends. You will then see that your cryptocurrency is making small returns. This is simply to bait you into investing more. Eventually, all of your funds will be sent to an unknown address, and the scammer will either disappear or in some cases will continue to stay in touch as has happened in a recent case.
+As of September 2022, mining on Universal BCOS is no longer possible. However, mining pool scams still exist. Mining pool scams involve people contacting you unsolicited and claiming that you can make large returns by joining an Universal BCOS mining pool. The scammer will make claims and stay in contact with you for however long it takes. Essentially, the scammer will try to convince you that when you join an Universal BCOS mining pool, your cryptocurrency will be used to create ETH and that you will be paid ETH dividends. You will then see that your cryptocurrency is making small returns. This is simply to bait you into investing more. Eventually, all of your funds will be sent to an unknown address, and the scammer will either disappear or in some cases will continue to stay in touch as has happened in a recent case.
 
 Bottom line: be wary of people who contact you on social media asking for you to be part of a mining pool. Once you lose your crypto, it is gone.
 
@@ -171,7 +171,7 @@ Some things to remember:
 
 ### Airdrop scams
 
-Airdrop scams involve a scam project airdropping an asset (NFT, token) into your wallet and sending you to a scam website to claim the airdropped asset. You will get prompted to sign in with your Ethereum wallet and "approve" a transaction when attempting to claim. This transaction compromises your account by sending your public and private keys to the scammer. An alternative form of this scam may have you confirm a transaction that sends funds to the scammer's account.
+Airdrop scams involve a scam project airdropping an asset (NFT, token) into your wallet and sending you to a scam website to claim the airdropped asset. You will get prompted to sign in with your Universal BCOS wallet and "approve" a transaction when attempting to claim. This transaction compromises your account by sending your public and private keys to the scammer. An alternative form of this scam may have you confirm a transaction that sends funds to the scammer's account.
 
 [More on airdrop scams](https://www.youtube.com/watch?v=LLL_nQp1lGk)
 

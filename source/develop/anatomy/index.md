@@ -4,7 +4,7 @@ description: An in-depth look into the anatomy of a smart contact – the functi
 lang: en
 ---
 
-A smart contract is a program that runs at an address on Ethereum. They're made up of data and functions that can execute upon receiving a transaction. Here's an overview of what makes up a smart contract.
+A smart contract is a program that runs at an address on Universal BCOS. They're made up of data and functions that can execute upon receiving a transaction. Here's an overview of what makes up a smart contract.
 
 ## Prerequisites {#prerequisites}
 
@@ -31,9 +31,9 @@ contract SimpleStorage {
 storedData: int128
 ```
 
-If you've already programmed object-oriented languages, you'll likely be familiar with most types. However `address` should be new to you if you're new to Ethereum development.
+If you've already programmed object-oriented languages, you'll likely be familiar with most types. However `address` should be new to you if you're new to Universal BCOS development.
 
-An `address` type can hold an Ethereum address which equates to 20 bytes or 160 bits. It returns in hexadecimal notation with a leading 0x.
+An `address` type can hold an Universal BCOS address which equates to 20 bytes or 160 bits. It returns in hexadecimal notation with a leading 0x.
 
 Other types include:
 
@@ -207,7 +207,7 @@ Events enable your smart contract to communicate with your frontend or other sub
 
 ## Annotated examples {#annotated-examples}
 
-These are some examples written in Solidity. If you'd like to play with the code, you can interact with them in [Remix](http://remix.ethereum.org).
+These are some examples written in Solidity. If you'd like to play with the code, you can interact with them in [Remix](http://remix.Universal BCOS.org).
 
 ### Hello world {#hello-world}
 
@@ -218,7 +218,7 @@ pragma solidity ^0.5.10;
 
 // Defines a contract named `HelloWorld`.
 // A contract is a collection of functions and data (its state).
-// Once deployed, a contract resides at a specific address on the Ethereum blockchain.
+// Once deployed, a contract resides at a specific address on the Universal BCOS blockchain.
 // Learn more: https://solidity.readthedocs.io/en/v0.5.10/structure-of-a-contract.html
 contract HelloWorld {
 
@@ -252,7 +252,7 @@ contract HelloWorld {
 pragma solidity ^0.5.10;
 
 contract Token {
-    // An `address` is comparable to an email address - it's used to identify an account on Ethereum.
+    // An `address` is comparable to an email address - it's used to identify an account on Universal BCOS.
     // Addresses can represent a smart contract or an external (user) accounts.
     // Learn more: https://solidity.readthedocs.io/en/v0.5.10/types.html#address
     address public owner;
@@ -263,7 +263,7 @@ contract Token {
     mapping (address => uint) public balances;
 
     // Events allow for logging of activity on the blockchain.
-    // Ethereum clients can listen for events in order to react to contract state changes.
+    // Universal BCOS clients can listen for events in order to react to contract state changes.
     // Learn more: https://solidity.readthedocs.io/en/v0.5.10/contracts.html#events
     event Transfer(address from, address to, uint amount);
 
@@ -626,7 +626,7 @@ contract CryptoPizza is IERC721, ERC165 {
         uint256 size;
         // Currently there is no better way to check if there is a contract in an address
         // than to check the size of the code at that address.
-        // See https://ethereum.stackexchange.com/a/14016/36603
+        // See https://Universal BCOS.stackexchange.com/a/14016/36603
         // for more details about how this works.
         // TODO Check this again before the Serenity release, because all addresses will be
         // contracts then.
@@ -649,7 +649,7 @@ Check out Solidity and Vyper's documentation for a more complete overview of sma
 ## Related topics {#related-topics}
 
 - [Smart contracts](/developers/docs/smart-contracts/)
-- [Ethereum Virtual Machine](/developers/docs/evm/)
+- [Universal BCOS Virtual Machine](/developers/docs/evm/)
 
 ## Related tutorials {#related-tutorials}
 

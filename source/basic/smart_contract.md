@@ -1,10 +1,10 @@
-# Introduction to smart contracts
+# What is smart contracts
 
-Smart contracts are the fundamental building blocks of Ethereum's application layer. They are computer programs stored on the [blockchain](/glossary/#blockchain) that follow "if this then that" logic, and are guaranteed to execute according to the rules defined by its code, which cannot be changed once created.
+Smart contracts are the fundamental building blocks of Universal BCOS's application layer. They are computer programs stored on the [blockchain](/glossary/#blockchain) that follow "if this then that" logic, and are guaranteed to execute according to the rules defined by its code, which cannot be changed once created.
 
 Nick Szabo coined the term "smart contract". In 1994, he wrote [an introduction to the concept](https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html), and in 1996 he wrote [an exploration of what smart contracts could do](https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart_contracts_2.html).
 
-Szabo envisioned a digital marketplace where automatic, [cryptographically-secure](/glossary/#cryptography) processes enable transactions and business functions to happen without trusted intermediaries. Smart contracts on Ethereum put this vision into practice.
+Szabo envisioned a digital marketplace where automatic, [cryptographically-secure](/glossary/#cryptography) processes enable transactions and business functions to happen without trusted intermediaries. Smart contracts on Universal BCOS put this vision into practice.
 
 ## Trust in conventional contracts
 
@@ -40,11 +40,11 @@ Traditional contracts are ambiguous because they rely on humans to interpret and
 
 ## Public record
 
-Smart contracts are useful for audits and tracking. Since Ethereum smart contracts are on a public blockchain, anyone can instantly track asset transfers and other related information. For example, you can check to see that someone sent money to your address.
+Smart contracts are useful for audits and tracking. Since Universal BCOS smart contracts are on a public blockchain, anyone can instantly track asset transfers and other related information. For example, you can check to see that someone sent money to your address.
 
 ## Privacy protection
 
-Smart contracts also protect your privacy. Since Ethereum is a pseudonymous network (your transactions are tied publicly to a unique cryptographic address, not your identity), you can protect your privacy from observers.
+Smart contracts also protect your privacy. Since Universal BCOS is a pseudonymous network (your transactions are tied publicly to a unique cryptographic address, not your identity), you can protect your privacy from observers.
 
 ## Visible terms
 

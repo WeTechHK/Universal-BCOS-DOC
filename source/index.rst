@@ -48,3 +48,11 @@
    develop/connect_hkchain.md
    develop/dapp_guide.md
    develop/deploy_guide.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Research
+
+   research/ecosystem.md
+   research/archetecture.md
+   research/security.md
