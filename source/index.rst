@@ -1,3 +1,7 @@
+##############################################################
+Universal BCOS
+##############################################################
+
 .. toctree::
    :maxdepth: 1
    :caption: Overview
@@ -22,23 +26,17 @@
    advance/accounts.md
    advance/transactions.md
    advance/gas.md
-   advance/ecnomic.md
-   advance/security.md
-   advance/evm.md
    advance/nodes.md
    advance/consensus.md
+   advance/evm.md
 
 .. toctree::
    :maxdepth: 1
    :caption: Usage
 
-   usage/networks.md
-   basic/wallet.md
-   usage/token.md
+   usage/wallet_usage.md
    usage/dapp_usage.md
    usage/stake.md
-   usage/deploy_nodes.md
-   usage/cases.md
 
 .. toctree::
    :maxdepth: 1

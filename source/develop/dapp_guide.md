@@ -1,4 +1,4 @@
-# How to use dapp
+# How to build a dapp
 
 ## Introduction
 

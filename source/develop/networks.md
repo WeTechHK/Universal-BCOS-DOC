@@ -1,4 +1,4 @@
-# Networks
+# How to run a node
 
 Universal BCOS networks are groups of connected computers that communicate using the Universal BCOS protocol. There is only one Universal BCOS Mainnet, but independent networks conforming to the same protocol rules can be created for testing and development purposes. There are many independent "networks" that conform to the protocol without interacting with each other. You can even start one locally on your own computer for testing your smart contracts and web3 apps.
 

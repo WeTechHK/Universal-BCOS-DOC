@@ -1,1 +1,1 @@
-# Using stake
+# How to deploy node

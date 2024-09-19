@@ -1,4 +1,4 @@
-# Transaction fees
+# Blocks
 
 Gas is essential to the Universal BCOS network. It is the fuel that allows it to operate, in the same way that a car needs gasoline to run.
 

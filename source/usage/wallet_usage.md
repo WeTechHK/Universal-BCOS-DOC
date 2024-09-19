@@ -1,1 +1,1 @@
-# Using wallets
+# How to use wallet
