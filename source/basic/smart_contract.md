@@ -1,4 +1,4 @@
-# What is smart contracts
+# What is blockchain
 
 Smart contracts are the fundamental building blocks of Universal BCOS's application layer. They are computer programs stored on the [blockchain](/glossary/#blockchain) that follow "if this then that" logic, and are guaranteed to execute according to the rules defined by its code, which cannot be changed once created.
 

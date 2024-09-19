@@ -42,9 +42,8 @@ Universal BCOS
    :maxdepth: 1
    :caption: Develop
 
-   develop/smart_contract_develop.md
-   develop/connect_hkchain.md
    develop/dapp_guide.md
+   develop/networks.md
    develop/deploy_guide.md
 
 .. toctree::
