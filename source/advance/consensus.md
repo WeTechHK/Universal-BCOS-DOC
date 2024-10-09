@@ -1,88 +1,119 @@
-# Consensus protocol
+# Consensus Algorithm
 
-The term 'consensus mechanism' is often used colloquially to refer to 'proof-of-stake', 'proof-of-work' or 'proof-of-authority' protocols. However, these are just components in consensus mechanisms that protect against [Sybil attacks](/glossary/#sybil-attack). Consensus mechanisms are the complete stack of ideas, protocols and incentives that enable a distributed set of nodes to agree on the state of a blockchain.
+Blockchain system guarantees system consistency through consensus algorithm. In theory, consensus is a fundamental problem in distributed computing and multi-agent systems is to achieve overall system reliability in the presence of a number of faulty processes, which often requires coordinating processes to reach consensus, or agree on some data value that is needed during computation.
 
-## Prerequisites
+In regard to the Universal BCOS blockchain, the process is formalized, and reaching consensus means that most of the nodes on the network agree on the global state of the network.
 
-To better understand this page, we recommend you first read our [introduction to Universal BCOS](/developers/docs/intro-to-Universal BCOS/).
-
-## What is consensus?
-
-By consensus, we mean that a general agreement has been reached. Consider a group of people going to the cinema. If there is no disagreement on a proposed choice of film, then a consensus is achieved. If there is disagreement, the group must have the means to decide which film to see. In extreme cases, the group will eventually split.
-
-In regard to the Universal BCOS blockchain, the process is formalized, and reaching consensus means that at least 66% of the nodes on the network agree on the global state of the network.
-
-## What is a consensus mechanism?
-
-The term consensus mechanism refers to the entire stack of protocols, incentives and ideas that allow a network of nodes to agree on the state of a blockchain.
-
-Universal BCOS uses a proof-of-stake-based consensus mechanism that derives its crypto-economic security from a set of rewards and penalties applied to capital locked by stakers. This incentive structure encourages individual stakers to operate honest validators, punishes those who don't, and creates an extremely high cost to attack the network.
-
-Then, there is a protocol that governs how honest validators are selected to propose or validate blocks, process transactions and vote for their view of the head of the chain. In the rare situations where multiple blocks are in the same position near the head of the chain, there is a fork-choice mechanism that selects blocks that make up the 'heaviest' chain, measured by the number of validators that voted for the blocks weighted by their staked ether balance.
-
-Some concepts are important to consensus that are not explicitly defined in code, such as the additional security offered by potential out-of-band social coordination as a last line of defense against attacks on the network.
-
-These components together form the consensus mechanism.
+Universal BCOS currently supports PBFT(Practical Byzantine Fault Tolerance)and PoS-rPBFT algorithms.
 
 ## Types of consensus mechanisms
 
-### Proof-of-work based
+According to whether or not to tolerate [Byzantine fault](https://en.wikipedia.org/wiki/Byzantine_fault), consensus algorithms can be classified as Crash Fault Tolerance(CFT) algorithms and Byzantine Fault Tolerance(BFT) algorithm:
 
-Like Bitcoin, Universal BCOS once used a **proof-of-work (PoW)** based consensus protocol.
+- CFT class algorithm is common fault-tolerant algorithm. When the system failure, server crash and other common failures, can still reach a consensus on a proposal. The classic algorithm includes Paxos, Raft, etc. This kind of algorithm has better performance, faster processing speed, can tolerate no more than half of the failed nodes.
 
-#### Block creation
+- BFT class algorithm : In addition to tolerating ordinary failures in the system consensus process of CFT, but also tolerating deliberate deception by some nodes(such as falsifying transaction execution results)Such as Byzantine errors, classical algorithms include PBFT, etc. which have poor performance and can tolerate no more than one-third of faulty nodes。
 
-Miners compete to create new blocks filled with processed transactions. The winner shares the new block with the rest of the network and earns some freshly minted ETH. The race is won by the computer which is able to solve a math puzzle fastest. This produces the cryptographic link between the current block and the block that went before. Solving this puzzle is the work in "proof-of-work". The canonical chain is then determined by a fork-choice rule that selects the set of blocks that have had the most work done to mine them.
+## PBFT
 
-#### Security
+PBFT consensus algorithms uses cryptographic algorithms such as signature, signature verification, and hash to ensure tamper-proof, forgery-proof, and non-repudiation in the messaging process, and reduce the complexity of the Byzantine fault-tolerant algorithm from the exponential level to the polynomial level.
 
-The network is kept secure by the fact that you'd need 51% of the network's computing power to defraud the chain. This would require such huge investments in equipment and energy; you're likely to spend more than you'd gain.
+### Important concepts of PBFT
 
-More on [proof-of-work](/developers/docs/consensus-mechanisms/pow/)
+Node type, node ID, node index and view are key concepts of PBFT consensus algorithm。For basic concepts of blockchain systems, please refer to Key Concepts.
 
-### Proof-of-stake based
+#### Node type
 
-Universal BCOS now uses a **proof-of-stake (PoS)** based consensus protocol.
+- Leader/Primary: Consensus node, responsible for packaging transactions into blocks and block consensus, each round of consensus process has and only one leader, in order to prevent the leader from forging blocks, after each round of PBFT consensus, will switch the leader；
 
-#### Block creation
+- Replica: Replica node, which is responsible for block consensus. There are multiple Replica nodes in each round of consensus. The process of each Replica node is similar；
 
-Validators create blocks. One validator is randomly selected in each slot to be the block proposer. Their consensus client requests a bundle of transactions as an 'execution payload' from their paired execution client. They wrap this in consensus data to form a block, which they send to other nodes on the Universal BCOS network. This block production is rewarded in ETH. In rare cases when multiple possible blocks exist for a single slot, or nodes hear about blocks at different times, the fork choice algorithm picks the block that forms the chain with the greatest weight of attestations (where weight is the number of validators attesting scaled by their ETH balance).
+- Observer: The observer node, which is responsible for obtaining the latest block from the consensus node or the replica node, and after executing and verifying the block execution result, the resulting block is on the chain.
 
-#### Security
+Leader and Replica are collectively referred to as consensus nodes.
 
-A proof-of-stake system is secure crypto-economically because an attacker attempting to take control of the chain must destroy a massive amount of ETH. A system of rewards incentivizes individual stakers to behave honestly, and penalties disincentivize stakers from acting maliciously.
+#### Node ID & & Node Index
 
-More on [proof-of-stake](/developers/docs/consensus-mechanisms/pos/)
+In order to prevent nodes from doing evil, each consensus node in the PBFT consensus process signs the messages it sends and checks the signatures of the received message packets, so each node maintains a key pair, the private key is used to sign the messages it sends, and the public key is used as the node ID to identify and check the signatures.
 
-### A visual guide
+**Node ID:** Consensus node signature public key and consensus node unique identifier, usually a 64-byte binary string, other nodes use the node ID of the message packet sender to verify the message packet
 
-Watch more on the different types of consensus mechanisms used on Universal BCOS:
+Considering that the node ID is very long, including this field in the consensus message will consume part of the network bandwidth, Universal BCOS introduces a node index, each consensus node maintains a public consensus node list, and the node index records the position of each consensus node ID in this list:
 
-<YouTube id="ojxfbN78WFQ" />
+**Node index:** The position of each consensus node ID in this list of common node IDs
 
-### Sybil resistance & chain selection
+#### Consensus View
 
-Proof-of-work and proof-of-stake alone are not consensus protocols, but they are often referred to as such for simplicity. They are actually Sybil resistance mechanisms and block author selectors; they are a way to decide who is the author of the latest block. Another important component is the chain selection (aka fork choice) algorithm that enables nodes to pick one single correct block at the head of the chain in scenarios where multiple blocks exist in the same position.
+The PBFT consensus algorithm uses views to record the consensus status of each node, and the same view node maintains the same list of Leader and Replicas nodes.
 
-**Sybil resistance** measures how a protocol fares against a Sybil attack. Resistance to this type of attack is essential for a decentralized blockchain and enables miners and validators to be rewarded equally based on resources put in. Proof-of-work and proof-of-stake protect against this by making users expend a lot of energy or put up a lot of collateral. These protections are an economic deterrent to Sybil attacks.
+When the leader fails, a view switch occurs. If the view switch is successful(At least 2*f+1 node reaches the same view), select a new leader based on the new view, and the new leader starts to produce new block, otherwise continue to switch views until most of the nodes in the network(Greater than or equal to 2*f+1)Achieve consistent view.
 
-A **chain selection rule** is used to decide which chain is the "correct" chain. Bitcoin uses the "longest chain" rule, which means that whichever blockchain is the longest will be the one the rest of the nodes accept as valid and work with. For proof-of-work chains, the longest chain is determined by the chain's total cumulative proof-of-work difficulty. Universal BCOS used to use the longest chain rule too; however, now that Universal BCOS runs on proof-of-stake it adopted an updated fork-choice algorithm that measures the 'weight' of the chain. The weight is the accumulated sum of validator votes, weighted by validator staked-ether balances.
+In the Universal BCOS system, the formula for calculating the leader index is as follows:
 
-Universal BCOS uses a consensus mechanism known as [Gasper](/developers/docs/consensus-mechanisms/pos/gasper/) that combines [Casper FFG proof-of-stake](https://arxiv.org/abs/1710.09437) with the [GHOST fork-choice rule](https://arxiv.org/abs/2003.03052).
+```math
+leader_{idx} = (view + block_{number})\ mod\ n
+```
 
-## Further reading
+### Core processes
 
-- [What Is a Blockchain Consensus Algorithm?](https://academy.binance.com/en/articles/what-is-a-blockchain-consensus-algorithm)
-- [What is Nakamoto Consensus? Complete Beginner’s Guide](https://blockonomi.com/nakamoto-consensus/)
-- [How Does Casper work?](https://medium.com/unitychain/intro-to-casper-ffg-9ed944d98b2d)
-- [On the Security and Performance of Proof of Work Blockchains](https://eprint.iacr.org/2016/555.pdf)
-- [Byzantine fault](https://en.wikipedia.org/wiki/Byzantine_fault)
+PBFT consensus mainly includes three stages: Pre-prepare, Prepare, and Commit:
 
-_Know of a community resource that helped you? Edit this page and add it!_
+- **Pre-prepare:** Responsible for executing blocks, generating signature packets, and broadcasting the signature packets to all consensus nodes;
 
-## Related topics
+- **Prepare:** responsible for collecting signature packages, a node collects full '2*f+1' after the signature package, indicating that it has reached the state of being able to submit blocks, start broadcasting the Commit package;
 
-- [Proof-of-work](/developers/docs/consensus-mechanisms/pow/)
-- [Mining](/developers/docs/consensus-mechanisms/pow/mining/)
-- [Proof-of-stake](/developers/docs/consensus-mechanisms/pos/)
-- [Proof-of-authority](/developers/docs/consensus-mechanisms/poa/)
+- **Commit:** responsible for collecting Commit packages, a node collects full '2*f+1' Commit packages the latest locally commit block to the database。
+
+![](../images/consensus/pbft_process.png)
+
+### View change processes
+
+The following figure simply view change process where blockchain contains 4(3*f+1, f=1)’ nodes, and the third node(node3) is the Byzantine node.
+
+![](../images/consensus/pbft_view.png)
+
+## PoS-rPBFT
+
+Consensus algorithms based on the principle of distributed consistency, such as BFT and CFT consensus algorithms, have the advantages of low transaction confirmation delay, final consistency, high throughput, and no power consumption.
+
+However, the complexity of communication in these algorithms is related to the size of the nodes. So the size of the network that can be supported is limited, which is greatly limits the scalability of the blockchain nodes。
+
+Universal BCOS proposes the PoS-rPBFT consensus algorithm, which aims to minimize the impact of node size on the consensus algorithm while preserving the high performance, high throughput, high consistency, and security of BFT-like consensus algorithms.
+
+### Node Type
+
+- Consensus committee nodes: the node executes the PBFT consensus process. Committee nodes will be rotated after a certain block height.
+
+- Candidate consensus node: do not paticipates the consensus process, verify blocks and check whether the consensus node is legal. After a certain block height, the consensus committee nodes will be rotated based on the election weight.
+
+### Core process
+
+![](../images/consensus/rpbft.png)
+
+The rPBFT algorithm selects only a number of consensus nodes for each round of consensus process, and periodically replaces the consensus nodes according to the block height to ensure system security, including two system parameters:
+
+- 'epoch_sealer_num': the number of nodes participating in the consensus process in each round of consensus. You can dynamically configure this parameter by sending transactions on the console.
+
+- 'epoch_block_num': The consensus node replacement cycle. To prevent the selected consensus nodes from being associated with each other, the rPBFT replaces a consensus node for each epoch_block_num block. You can dynamically configure this parameter by issuing transactions on the console
+
+These two configuration items are recorded in the system configuration table. The configuration table mainly includes three fields: configuration keyword, configuration corresponding value, and effective block height. The effective block height records the latest effective block height of the latest configuration value. For example, set ‘epoch_sealer_num’ and ‘epoch_block_num’ to 4 and 10000 respectively in a 100-block transaction.
+
+#### Blockchain initialization
+
+During blockchain initialization, rPBFT needs to select 'epoch_sealer_num' consensus nodes to participate in consensus among consensus members. Currently, the initial implementation is to select nodes with indexes from 0 to 'epoch_sealer_num'-1 to participate in the consensus of the previous 'epoch_block_num' blocks.
+
+#### PBFT runs in consensus committee
+
+The selected 'epoch_sealer_num' consensus member nodes run the PBFT consensus algorithm to verify node synchronization and verify the blocks generated by the consensus of these consensus member nodes.
+
+- Checked list of block signatures: each block must contain the signatures of at least two-thirds of the consensus members.
+
+- Check the execution result of the block: the execution result of the local block must be consistent with the execution result recorded by the consensus committee in the block header.
+
+#### Dynamic rotating of consensus committee
+
+To ensure system security, the rPBFT algorithm removes a node from the consensus member list as a validation node and adds a validation node to the consensus member list after each 'epoch_block_num' block, as shown in the following figure:
+
+![](../images/consensus/epoch_rotating.png)
+
+In the current implementation of the rPBFT algorithm, the consensus member list nodes are replaced by validation nodes in turn. If the current ordered consensus committee node list is `CommitteeSealersList` and the total number of consensus nodes is `N`, then after the consensus `epoch_block_num` blocks, the `CommitteeSealersList [0]` will be removed from the consensus member list and added to the index `(CommitteeSealersList[0].IDX + epoch_sealer_num) % N` to consensus member list。Round `i` replacement cycle, remove `CommitteeSealersList [i% epoch _ sealer _ num]` from the list of consensus members and add the index as `(CommitteeSealersList[i%epoch_sealer_num].IDX + epoch_sealer_num) % N` to consensus member list。

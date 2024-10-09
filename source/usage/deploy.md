@@ -1,14 +1,6 @@
-# How to build a chain
+# How to deploy node
 
-## Introduction
-
-This guide walks you through the process of instantiating a configurable local Universal BCOS testnet, deploying a smart contract to it, and using the testnet to run tests against your dApp. This guide is designed for dApp developers who want to develop and test their dApps locally against different network configurations before deploying to a live testnet or the mainnet.
-
-In this guide, you will:
-
-- Instantiate a local Universal BCOS testnet with the [`eth-network-package`](https://github.com/kurtosis-tech/eth-network-package) using [Kurtosis](https://www.kurtosis.com/),
-- Connect your Hardhat dApp development environment to the local testnet to compile, deploy, and test a dApp, and
-- Configure the local testnet, including parameters like number of nodes and specific EL/CL client pairings, to enable development and testing workflows against various network configurations.
+This chapter helps users master the Universal BCOS deployment process by deploying a 4-node Universal BCOS private chain on a single machine.
 
 ## 1. Install dependencies
 

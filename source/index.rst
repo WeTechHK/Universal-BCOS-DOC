@@ -13,9 +13,8 @@ Universal BCOS
    :maxdepth: 1
    :caption: Basic
 
-   basic/web3.md
    basic/blockchain.md
-   basic/smart_contract.md
+   basic/web3.md
    basic/dapp.md
    basic/wallet.md
 
@@ -35,16 +34,19 @@ Universal BCOS
    :caption: Usage
 
    usage/wallet_usage.md
-   usage/dapp_usage.md
-   usage/stake.md
+   usage/remix_usage.md
+   usage/explorer_usage.md
+   usage/deploy.md
 
 .. toctree::
    :maxdepth: 1
    :caption: Develop
-
-   develop/dapp_guide.md
+    
+   develop/solidity.md
    develop/networks.md
    develop/deploy_guide.md
+   develop/dapp_guide.md
+   develop/compile_from_source.md
 
 .. toctree::
    :maxdepth: 1

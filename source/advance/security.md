@@ -2,22 +2,11 @@
 
 Rising interest in cryptocurrency brings with it growing risk from scammers and hackers. This article lays out some best practices to mitigate these risks.
 
-<Divider />
-
 ## Crypto security 101
 
 ### Level up your knowledge
 
 Misunderstandings about how crypto works can lead to costly mistakes. For example, if someone pretends to be a customer service agent who can return lost ETH in exchange for your private keys, they are preying on people not understanding that Universal BCOS is a decentralized network lacking this kind of functionality. Educating yourself on how Universal BCOS works is a worthwhile investment.
-
-<DocLink href="/what-is-Universal BCOS/">
-  What is Universal BCOS?
-</DocLink>
-
-<DocLink href="/eth/">
-  What is ether?
-</DocLink>
-<Divider />
 
 ## Wallet security
 
@@ -26,10 +15,6 @@ Misunderstandings about how crypto works can lead to costly mistakes. For exampl
 **Never, for any reason, share your private keys!**
 
 The private key to your wallet is a password to your Universal BCOS wallet. It is the only thing stopping someone who knows your wallet address from draining your account of all of its assets!
-
-<DocLink href="/wallets/">
-  What's an Universal BCOS wallet?
-</DocLink>
 
 #### Don't take screenshots of your seed phrases/private keys
 
@@ -57,11 +42,7 @@ It is good practice when interacting with a smart contract to read the transacti
 
 When interacting with smart contracts, do not allow unlimited spend limits. An unlimited spend could enable the smart contract to drain your wallet. Instead, set spending limits to only the amount necessary for the transaction.
 
-Many Universal BCOS wallets offer limits protection to safeguard against accounts being drained.
-
-[How to revoke smart contract access to your crypto funds](/guides/how-to-revoke-token-access/)
-
-<Divider />
+Many wallets offer limits protection to safeguard against accounts being drained.
 
 ## Common scams
 
@@ -73,13 +54,9 @@ It is impossible to stop scammers completely, but we can make them less effectiv
 
 ### Twitter ad phishing
 
-![Twitter link phishing](./twitterPhishingScam.png)
-
-There is a method for spoofing Twitter's (also known as X) link preview feature (unfurling) to potentially deceive users into thinking they are visiting a legitimate website. This technique exploits Twitter's mechanism for generating previews of URLs shared in tweets, and shows _from Universal BCOS.org_ for example (shown above), when in fact they are being redirected to a malicious site.
+There is a method for spoofing Twitter's (also known as X) link preview feature (unfurling) to potentially deceive users into thinking they are visiting a legitimate website. This technique exploits Twitter's mechanism for generating previews of URLs shared in tweets, when in fact they are being redirected to a malicious site.
 
 Always check that you are on the right domain, especially after clicking a link.
-
-[More information here](https://harrydenley.com/faking-twitter-unfurling).
 
 ### Giveaway scam
 
@@ -91,8 +68,6 @@ These scams usually stipulate a limited time of opportunity to claim the giveawa
 
 A high-profile version of this occurred in July 2020, when the Twitter accounts of prominent celebrities and organizations got hacked. The hacker simultaneously posted a Bitcoin giveaway on the hacked accounts. Although the deceptive tweets were quickly noticed and deleted, the hackers still managed to get away with 11 bitcoin (or $500,000 as of September 2021).
 
-![A scam on Twitter](./appleTwitterScam.png)
-
 ### Celebrity giveaway
 
 The celebrity giveaway is another common form the giveaway scam takes. The scammers will take a recorded video interview or conference talk given a celebrity and livestream it on YouTube - making it appear as though the celebrity was giving a live video interview endorsing a cryptocurrency giveaway.
@@ -101,27 +76,17 @@ Vitalik Buterin is used most often in this scam, but many other prominent people
 
 **Giveaways are always scams. If you send your funds to these accounts, you will lose them forever.**
 
-![A scam on YouTube](./youtubeScam.png)
-
 ### Support scams
 
 Cryptocurrency is a relatively young and misunderstood technology. A common scam that takes advantage of this is the support scam, where scammers will impersonate support personnel for popular wallets, exchanges, or blockchains.
 
 Much of the discussion about Universal BCOS happens on Discord. Support scammers will commonly find their target by searching for support questions in public discord channels and then sending the enquirer a private message offering support. By building trust, support scammers try to trick you into revealing your private keys or sending your funds to their wallets.
 
-![A support scam on Discord](./discordScam.png)
-
 As a general rule, staff will never communicate with you through private, unofficial channels. Some simple things to keep in mind when dealing with support:
 
 - Never share your private keys, seed phrases or passwords
 - Never allow anyone remote access into your computer
 - Never communicate outside an organization's designated channels
-
-<InfoBanner emoji=":lock:">
-  <div>
-    Beware: although support-style scams commonly happen on Discord, they can also be prevalent on any chat applications where crypto discussion happens, including email.
-  </div>
-</InfoBanner>
 
 ### 'Eth2' token scam
 

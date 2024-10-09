@@ -2,7 +2,11 @@
 
 ## Overview
 
-The current blockchain in Web3 suffers from insufficient performance, low security, and high transaction fee, making it difficult to meet the needs of financial-grade applications.Universal BCOS (or UBCOS for short) is an open-source blockchain platform that combines financial-grade functionality and openness with high-performance, high security, and compliance. It is built collaboratively by an open community, remaining technology agnostic and open for participation. Based on Universal BCOS, you can build financial-grade infrastructure for Web3 application scenarios (e.g. Stablecoin, Real World Assets (RWA), DePin, etc.) on a global scale.
+<!-- The current blockchain in Web3 suffers from insufficient performance, low security, and high transaction fee, making it difficult to meet the needs of financial-grade applications.  -->
+
+Universal BCOS (or UBCOS for short) is an open-source blockchain platform that combines financial-grade functionality and openness with high-performance, high security, and compliance.
+
+It is built collaboratively by an open community, remaining technology agnostic and open for participation. Based on Universal BCOS, you can build financial-grade infrastructure for Web3 application scenarios (e.g. Stablecoin, Real World Assets (RWA), DePin, etc.) on a global scale.
 
 ## Design Goals
 

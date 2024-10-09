@@ -1,6 +1,6 @@
 # What is dapps
 
-A decentralized application (dapp) is an application built on a decentralized network that combines a [smart contract](/developers/docs/smart-contracts/) and a frontend user interface. On Universal BCOS, smart contracts are accessible and transparent – like open APIs – so your dapp can even include a smart contract that someone else has written.
+A decentralized application (dapp) is an application built on a decentralized network that combines a [smart contract](./smart_contract.md) and a frontend user interface. On Universal BCOS, smart contracts are accessible and transparent – like open APIs – so your dapp can even include a smart contract that someone else has written.
 
 ## Prerequisites
 
@@ -15,11 +15,11 @@ A dapp can have frontend code and user interfaces written in any language (just 
 - **Decentralized** - dapps operate on Universal BCOS, an open public decentralized platform where no one person or group has control
 - **Deterministic** - dapps perform the same function irrespective of the environment in which they get executed
 - **Turing complete** - dapps can perform any action given the required resources
-- **Isolated** - dapps are executed in a virtual environment known as Universal BCOS Virtual Machine so that if the smart contract has a bug, it won’t hamper the normal functioning of the blockchain network
+- **Isolated** - dapps are executed in a virtual environment known as Ethereum Virtual Machine so that if the smart contract has a bug, it won’t hamper the normal functioning of the blockchain network
 
 ### On smart contracts
 
-To introduce dapps, we need to introduce smart contracts – a dapp's backend for lack of a better term. For a detailed overview, head to our section on [smart contracts](/developers/docs/smart-contracts/).
+To introduce dapps, we need to introduce smart contracts – a dapp's backend for lack of a better term. For a detailed overview, head to our section on [smart contracts](./smart_contract.md).
 
 A smart contract is code that lives on the Universal BCOS blockchain and runs exactly as programmed. Once smart contracts are deployed on the network you can't change them. Dapps can be decentralized because they are controlled by the logic written into the contract, not an individual or company. This also means you need to design your contracts very carefully and test them thoroughly.
 
@@ -46,19 +46,10 @@ A smart contract is code that lives on the Universal BCOS blockchain and runs ex
 - [GitHub](https://github.com/scaffold-eth/scaffold-eth-2)
 - [Example dapp](https://punkwallet.io/)
 
-**Create Eth App _- Create Universal BCOS-powered apps with one command._**
-
-- [GitHub](https://github.com/paulrberg/create-eth-app)
-
 **One Click Dapp _- FOSS tool for generating dapp frontends from an [ABI](/glossary/#abi)._**
 
 - [oneclickdapp.com](https://oneclickdapp.com)
 - [GitHub](https://github.com/oneclickdapp/oneclickdapp-v1)
-
-**Etherflow _- FOSS tool for Universal BCOS developers to test their node, and compose & debug RPC calls from the browser._**
-
-- [etherflow.quiknode.io](https://etherflow.quiknode.io/)
-- [GitHub](https://github.com/abunsen/etherflow)
 
 **thirdweb _- SDKs in every language, smart contracts, tools, and infrastructure for web3 development._**
 
@@ -74,7 +65,6 @@ A smart contract is code that lives on the Universal BCOS blockchain and runs ex
 
 ## Further reading
 
-- [Explore dapps](/dapps)
 - [The Architecture of a Web 3.0 application](https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application) - _Preethi Kasireddy_
 - [A 2021 guide to decentralized applications](https://limechain.tech/blog/what-are-dapps-the-2021-guide/) - _LimeChain_
 - [What Are Decentralized Apps?](https://www.gemini.com/cryptopedia/decentralized-applications-defi-dapps) - _Gemini_

@@ -1,24 +1,24 @@
 # Accounts
 
-An Universal BCOS account is an entity with an ether (ETH) balance that can send transactions on Universal BCOS. Accounts can be user-controlled or deployed as smart contracts.
+An Universal BCOS account is an entity with a balance that can send transactions on Universal BCOS. Accounts can be user-controlled or deployed as smart contracts.
 
 ## Prerequisites
 
-To help you better understand this page, we recommend you first read through our [introduction to Universal BCOS](/developers/docs/intro-to-Universal BCOS/).
+To help you better understand this page, we recommend you first read through our [introduction to Universal BCOS](../overview/introduction_universal_bcos.md).
 
 ## Account types
 
 Universal BCOS has two account types:
 
 - Externally-owned account (EOA) – controlled by anyone with the private keys
-- Contract account – a smart contract deployed to the network, controlled by code. Learn about [smart contracts](/developers/docs/smart-contracts/)
+- Contract account – a smart contract deployed to the network, controlled by code. Learn about [smart contracts](../basic/smart_contract.md)
 
 Both account types have the ability to:
 
 - Receive, hold and send ETH and tokens
 - Interact with deployed smart contracts
 
-### Key differences
+### Two types differences
 
 **Externally-owned**
 
@@ -39,7 +39,7 @@ Both account types have the ability to:
 Universal BCOS accounts have four fields:
 
 - `nonce` – A counter that indicates the number of transactions sent from an externally-owned account or the number of contracts created by a contract account. Only one transaction with a given nonce can be executed for each account, protecting against replay attacks where signed transactions are repeatedly broadcast and re-executed.
-- `balance` – The number of wei owned by this address. Wei is a denomination of ETH and there are 1e+18 wei per ETH.
+- `balance` – The number of wei owned by this address. Wei is a denomination of balance and there are 1e+18 wei per balance.
 - `codeHash` – This hash refers to the _code_ of an account on the Universal BCOS virtual machine (EVM). Contract accounts have code fragments programmed in that can perform different operations. This EVM code gets executed if the account gets a message call. It cannot be changed, unlike the other account fields. All such code fragments are contained in the state database under their corresponding hashes for later retrieval. This hash value is known as a codeHash. For externally owned accounts, the codeHash field is the hash of an empty string.
 - `storageRoot` – Sometimes known as a storage hash. A 256-bit hash of the root node of a Merkle Patricia trie that encodes the storage contents of the account (a mapping between 256-bit integer values), encoded into the trie as a mapping from the Keccak 256-bit hash of the 256-bit integer keys to the RLP-encoded 256-bit integer values. This trie encodes the hash of the storage contents of this account, and is empty by default.
 
@@ -72,22 +72,8 @@ Example:
 
 `0x5e97870f263700f46aa00d967821199b9bc5a120`
 
-The following example shows how to use a signing tool called [Clef](https://geth.Universal BCOS.org/docs/tools/clef/introduction) to generate a new account. Clef is an account management and signing tool that comes bundled with the Universal BCOS client, [Geth](https://geth.Universal BCOS.org). The `clef newaccount` command creates a new key pair and saves them in an encrypted keystore.
-
-```
-> clef newaccount --keystore <path>
-
-Please enter a password for the new account to be created:
-> <password>
-
-------------
-INFO [10-28|16:19:09.156] Your new key was generated       address=0x5e97870f263700f46aa00d967821199b9bc5a120
-WARN [10-28|16:19:09.306] Please backup your key file      path=/home/user/go-Universal BCOS/data/keystore/UTC--2022-10-28T15-19-08.000825927Z--5e97870f263700f46aa00d967821199b9bc5a120
-WARN [10-28|16:19:09.306] Please remember your password!
-Generated account 0x5e97870f263700f46aa00d967821199b9bc5a120
-```
-
-[Geth documentation](https://geth.Universal BCOS.org/docs)
+You can check this URL to use openssl command to create keyPair:
+https://kobl.one/blog/create-full-ethereum-keypair-and-address/
 
 It is possible to derive new public keys from your private key, but you cannot derive a private key from public keys. It is vital to keep your private keys safe and, as the name suggests, **PRIVATE**.
 
@@ -103,31 +89,11 @@ Example:
 
 The contract address is usually given when a contract is deployed to the Universal BCOS Blockchain. The address comes from the creator's address and the number of transactions sent from that address (the “nonce”).
 
-## Validator keys
-
-There is also another type of key in Universal BCOS, introduced when Universal BCOS switched from proof-of-work to proof-of-stake based consensus. These are 'BLS' keys and they are used to identify validators. These keys can be efficiently aggregated to reduce the bandwidth required for the network to come to consensus. Without this key aggregation the minimum stake for a validator would be much higher.
-
-[More on validator keys](/developers/docs/consensus-mechanisms/pos/keys/).
-
 ## A note on wallets
 
 An account is not a wallet. A wallet is an interface or application that lets you interact with your Universal BCOS account, either an externally-owned account or a contract account.
 
-## A visual demo
-
-Watch Austin walk you through hash functions, and key pairs.
-
-<YouTube id="QJ010l-pBpE" />
-
-<YouTube id="9LtBDy67Tho" />
-
-## Further reading
-
-- [Understanding Universal BCOS Accounts](https://info.etherscan.com/understanding-Universal BCOS-accounts/) - etherscan
-
-_Know of a community resource that helped you? Edit this page and add it!_
-
 ## Related topics
 
-- [Smart contracts](/developers/docs/smart-contracts/)
-- [Transactions](/developers/docs/transactions/)
+- [Smart contracts](../basic/smart_contract.md)
+- [Transactions](./transactions.md)

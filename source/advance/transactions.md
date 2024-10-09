@@ -2,18 +2,19 @@
 
 Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Universal BCOS network. The simplest transaction is transferring ETH from one account to another.
 
+Transactions - the core of the blockchain system, responsible for recording everything that happens on the blockchain。With the introduction of smart contracts in the blockchain, transactions go beyond the original definition of “value transfer,” and a more precise definition should be a digital record of a transaction in the blockchain。transactions, large or small, require the involvement of transactions。
+
 ## Prerequisites
 
-To help you better understand this page, we recommend you first read [Accounts](/developers/docs/accounts/) and our [introduction to Universal BCOS](/developers/docs/intro-to-Universal BCOS/).
+To help you better understand this page, we recommend you first read [Accounts](./accounts.md) and our [introduction to Universal BCOS](../overview/introduction_universal_bcos.md).
 
 ## What's a transaction?
 
 An Universal BCOS transaction refers to an action initiated by an externally-owned account, in other words an account managed by a human, not a contract. For example, if Bob sends Alice 1 ETH, Bob's account must be debited and Alice's must be credited. This state-changing action takes place within a transaction.
 
 ![Diagram showing a transaction cause state change](./tx.png)
-_Diagram adapted from [Universal BCOS EVM illustrated](https://takenobu-hs.github.io/downloads/Universal BCOS_evm_illustrated.pdf)_
 
-Transactions, which change the state of the EVM, need to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM; after this happens, a validator will execute the transaction and propagate the resulting state change to the rest of the network.
+Transactions, which change the state of the EVM, need to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM; After this happens, a validator will execute the transaction and propagate the resulting state change to the rest of the network.
 
 Transactions require a fee and must be included in a validated block. To make this overview simpler we'll cover gas fees and validation elsewhere.
 
@@ -25,11 +26,11 @@ A submitted transaction includes the following information:
 - `nonce` - a sequentially incrementing counter which indicates the transaction number from the account
 - `value` – amount of ETH to transfer from sender to recipient (denominated in WEI, where 1ETH equals 1e+18wei)
 - `input data` – optional field to include arbitrary data
-- `gasLimit` – the maximum amount of gas units that can be consumed by the transaction. The [EVM](/developers/docs/evm/opcodes) specifies the units of gas required by each computational step
+- `gasLimit` – the maximum amount of gas units that can be consumed by the transaction. The [EVM](./evm.md) specifies the units of gas required by each computational step
 - `maxPriorityFeePerGas` - the maximum price of the consumed gas to be included as a tip to the validator
 - `maxFeePerGas` - the maximum fee per unit of gas willing to be paid for the transaction (inclusive of `baseFeePerGas` and `maxPriorityFeePerGas`)
 
-Gas is a reference to the computation required to process the transaction by a validator. Users have to pay a fee for this computation. The `gasLimit`, and `maxPriorityFeePerGas` determine the maximum transaction fee paid to the validator. [More on Gas](/developers/docs/gas/).
+Gas is a reference to the computation required to process the transaction by a validator. Users have to pay a fee for this computation. The `gasLimit`, and `maxPriorityFeePerGas` determine the maximum transaction fee paid to the validator. [More on Gas](./gas.md).
 
 The transaction object will look a little like this:
 
@@ -49,29 +50,7 @@ But a transaction object needs to be signed using the sender's private key. This
 
 An Universal BCOS client like Geth will handle this signing process.
 
-Example [JSON-RPC](/developers/docs/apis/json-rpc) call:
-
-```json
-{
-  "id": 2,
-  "jsonrpc": "2.0",
-  "method": "account_signTransaction",
-  "params": [
-    {
-      "from": "0x1923f626bb8dc025849e00f99c25fe2b2f7fb0db",
-      "gas": "0x55555",
-      "maxFeePerGas": "0x1234",
-      "maxPriorityFeePerGas": "0x1234",
-      "input": "0xabcd",
-      "nonce": "0x0",
-      "to": "0x07a565b7ed7d7a678680a4c162885bedbb695fe0",
-      "value": "0x1234"
-    }
-  ]
-}
-```
-
-Example response:
+Example transaction object:
 
 ```json
 {
@@ -96,7 +75,7 @@ Example response:
 }
 ```
 
-- the `raw` is the signed transaction in [Recursive Length Prefix (RLP)](/developers/docs/data-structures-and-encoding/rlp) encoded form
+- the `raw` is the signed transaction in Recursive Length Prefix (RLP) encoded form
 - the `tx` is the signed transaction in JSON form
 
 With the signature hash, the transaction can be cryptographically proven that it came from the sender and submitted to the network.
@@ -104,7 +83,7 @@ With the signature hash, the transaction can be cryptographically proven that it
 ### The data field
 
 The vast majority of transactions access a contract from an externally-owned account.
-Most contracts are written in Solidity and interpret their data field in accordance with the [application binary interface (ABI)](/glossary/#abi).
+Most contracts are written in Solidity and interpret their data field in accordance with the application binary interface.
 
 The first four bytes specify which function to call, using the hash of the function's name and arguments.
 You can sometimes identify the function from the selector using [this database](https://www.4byte.directory/signatures/).
@@ -119,7 +98,7 @@ In this case [the contract source code](https://etherscan.io/address/0xa0b86991c
 
 The rest of the data is:
 
-```
+```bash
 0000000000000000000000004f6742badb049791cd9a37ea913f2bac38d01279
 000000000000000000000000000000000000000000000000000000003b0559f4
 ```
@@ -138,11 +117,11 @@ On Universal BCOS there are a few different types of transactions:
 
 ### On gas
 
-As mentioned, transactions cost [gas](/developers/docs/gas/) to execute. Simple transfer transactions require 21000 units of Gas.
+As mentioned, transactions cost [gas](./gas.md) to execute. Simple transfer transactions require 21000 units of Gas.
 
 So for Bob to send Alice 1 ETH at a `baseFeePerGas` of 190 gwei and `maxPriorityFeePerGas` of 10 gwei, Bob will need to pay the following fee:
 
-```
+```bash
 (190 + 10) * 21000 = 4,200,000 gwei
 --or--
 0.0042 ETH
@@ -156,9 +135,7 @@ The base fee will be burned **-0.00399 ETH**
 
 Validator keeps the tip **+0.000210 ETH**
 
-
 ![Diagram showing how unused gas is refunded](./gas-tx.png)
-_Diagram adapted from [Universal BCOS EVM illustrated](https://takenobu-hs.github.io/downloads/Universal BCOS_evm_illustrated.pdf)_
 
 Any gas not used in a transaction is refunded to the user account.
 
@@ -166,7 +143,7 @@ Any gas not used in a transaction is refunded to the user account.
 
 Gas is required for any transaction that involves a smart contract.
 
-Smart contracts can also contain functions known as [`view`](https://docs.soliditylang.org/en/latest/contracts.html#view-functions) or [`pure`](https://docs.soliditylang.org/en/latest/contracts.html#pure-functions) functions, which do not alter the state of the contract. As such, calling these functions from an EOA will not require any gas. The underlying RPC call for this scenario is [`eth_call`](/developers/docs/apis/json-rpc#eth_call)
+Smart contracts can also contain functions known as [`view`](https://docs.soliditylang.org/en/latest/contracts.html#view-functions) or [`pure`](https://docs.soliditylang.org/en/latest/contracts.html#pure-functions) functions, which do not alter the state of the contract. As such, calling these functions from an EOA will not require any gas. The underlying RPC call for this scenario is [`eth_call`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_call)
 
 Unlike when accessed using `eth_call`, these `view` or `pure` functions are also commonly called internally (i.e. from the contract itself or from another contract) which does cost gas.
 
@@ -188,9 +165,9 @@ Universal BCOS originally had one format for transactions. Each transaction cont
 
 `RLP([nonce, gasPrice, gasLimit, to, value, data, v, r, s])`
 
-Universal BCOS has evolved to support multiple types of transactions to allow for new features such as access lists and [EIP-1559](https://eips.Universal BCOS.org/EIPS/eip-1559) to be implemented without affecting legacy transaction formats.
+Universal BCOS has evolved to support multiple types of transactions to allow for new features such as access lists and [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) to be implemented without affecting legacy transaction formats.
 
-[EIP-2718](https://eips.Universal BCOS.org/EIPS/eip-2718) is what allows for this behavior. Transactions are interpreted as:
+[EIP-2718](https://eips.ethereum.org/EIPS/eip-2718) is what allows for this behavior. Transactions are interpreted as:
 
 `TransactionType || TransactionPayload`
 
@@ -201,20 +178,18 @@ Where the fields are defined as:
 
 Based on the `TransactionType` value, a transaction can be classified as
 
-1. **Type 0 (Legacy) Transactions:** The original transaction format used since Universal BCOS's launch. They do not include features from [EIP-1559](https://eips.Universal BCOS.org/EIPS/eip-1559) such as dynamic gas fee calculations or access lists for smart contracts. Legacy transactions lack a specific prefix indicating their type in their serialized form, starting with the byte `0xf8` when using [Recursive Length Prefix (RLP)](/developers/docs/data-structures-and-encoding/rlp) encoding. The TransactionType value for these transactions is `0x0`.
+1. **Type 0 (Legacy) Transactions:** The original transaction format used since Ethereum's launch. They do not include features from [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) such as dynamic gas fee calculations or access lists for smart contracts. Legacy transactions lack a specific prefix indicating their type in their serialized form, starting with the byte `0xf8` when using Recursive Length Prefix (RLP) encoding. The TransactionType value for these transactions is `0x0`.
 
-2. **Type 1 Transactions:** Introduced in [EIP-2930](https://eips.Universal BCOS.org/EIPS/eip-2930) as part of Universal BCOS's [Berlin Upgrade](/history/#berlin), these transactions include an `accessList` parameter. This list specifies addresses and storage keys the transaction expects to access, helping to potentially reduce [gas](/developers/docs/gas/) costs for complex transactions involving smart contracts. EIP-1559 fee market changes are not included in Type 1 transactions. Type 1 transactions also include a `yParity` parameter, which can either be `0x0` or `0x1`, indicating the parity of the y-value of the secp256k1 signature. They are identified by starting with the byte `0x01`, and their TransactionType value is `0x1`.
+2. **Type 1 Transactions:** Introduced in [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) as part of Ethereum's Berlin Upgrade, these transactions include an `accessList` parameter. This list specifies addresses and storage keys the transaction expects to access, helping to potentially reduce [gas](./gas.md) costs for complex transactions involving smart contracts. EIP-1559 fee market changes are not included in Type 1 transactions. Type 1 transactions also include a `yParity` parameter, which can either be `0x0` or `0x1`, indicating the parity of the y-value of the secp256k1 signature. They are identified by starting with the byte `0x01`, and their TransactionType value is `0x1`.
 
-3. **Type 2 Transactions**, commonly referred to as EIP-1559 transactions, are transactions introduced in [EIP-1559](https://eips.Universal BCOS.org/EIPS/eip-1559), in Universal BCOS's [London Upgrade](/history/#london). They have become the standard transaction type on the Universal BCOS network. These transactions introduce a new fee market mechanism that improves predictability by separating the transaction fee into a base fee and a priority fee. They start with the byte `0x02` and include fields such as `maxPriorityFeePerGas` and `maxFeePerGas`. Type 2 transactions are now the default due to their flexibility and efficiency, especially favored during periods of high network congestion for their ability to help users manage transaction fees more predictably. The TransactionType value for these transactions is `0x2`.
+3. **Type 2 Transactions**, commonly referred to as EIP-1559 transactions, are transactions introduced in [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559), in Ethereum's London Upgrade. They have become the standard transaction type on the Universal BCOS network. These transactions introduce a new fee market mechanism that improves predictability by separating the transaction fee into a base fee and a priority fee. They start with the byte `0x02` and include fields such as `maxPriorityFeePerGas` and `maxFeePerGas`. Type 2 transactions are now the default due to their flexibility and efficiency, especially favored during periods of high network congestion for their ability to help users manage transaction fees more predictably. The TransactionType value for these transactions is `0x2`.
 
 ## Further reading
 
-- [EIP-2718: Typed Transaction Envelope](https://eips.Universal BCOS.org/EIPS/eip-2718)
-
-_Know of a community resource that helped you? Edit this page and add it!_
+- [EIP-2718: Typed Transaction Envelope](https://eips.ethereum.org/EIPS/eip-2718)
 
 ## Related topics
 
-- [Accounts](/developers/docs/accounts/)
-- [Universal BCOS virtual machine (EVM)](/developers/docs/evm/)
-- [Gas](/developers/docs/gas/)
+- [Accounts](./accounts.md)
+- [Ethereum virtual machine (EVM)](./evm.md)
+- [Gas](./gas.md)
