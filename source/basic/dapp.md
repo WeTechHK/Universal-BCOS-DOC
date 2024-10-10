@@ -1,71 +1,31 @@
-# What is dapps
+# Intro to dapps
 
-A decentralized application (dapp) is an application built on a decentralized network that combines a [smart contract](./smart_contract.md) and a frontend user interface. On Universal BCOS, smart contracts are accessible and transparent – like open APIs – so your dapp can even include a smart contract that someone else has written.
+Decentralized application, or dapp, is an application designed to operate on a decentralized network, combining smart contracts and a user interface. Dapps are part of the broader movement towards decentralized systems, aiming to reduce the control wielded by centralized authorities and increase user autonomy.
 
-## Prerequisites
-
-Before learning about dapps, you should cover the [blockchain basics](/developers/docs/intro-to-Universal BCOS/) and read about the Universal BCOS network and how it's decentralized.
+Universal BCOS fully supports Dapp integration, enabling developers to harness the power of financial-grade decentralized networks.
 
 ## Definition of a dapp
 
-A dapp has its backend code running on a decentralized peer-to-peer network. Contrast this with an app where the backend code is running on centralized servers.
+Dapps have several defining characteristics:
 
-A dapp can have frontend code and user interfaces written in any language (just like an app) to make calls to its backend. Furthermore, its frontend can get hosted on decentralized storage such as [IPFS](https://ipfs.io/).
+- **Decentralization:** Backend code runs on a peer-to-peer network, not on centralized servers.
+- **Determinism:** They perform the same function regardless of the environment in which they are executed.
+- **Turing Completeness:** They can perform any computation given sufficient resources.
+- **Isolation:** Executed in a virtual environment (like the Ethereum Virtual Machine), ensuring that bugs in a smart contract do not affect the broader network.
 
-- **Decentralized** - dapps operate on Universal BCOS, an open public decentralized platform where no one person or group has control
-- **Deterministic** - dapps perform the same function irrespective of the environment in which they get executed
-- **Turing complete** - dapps can perform any action given the required resources
-- **Isolated** - dapps are executed in a virtual environment known as Ethereum Virtual Machine so that if the smart contract has a bug, it won’t hamper the normal functioning of the blockchain network
+## Comparison with Traditional Apps
 
-### On smart contracts
+| Feature             | Dapp                           | Traditional App                |
+|---------------------|--------------------------------|--------------------------------|
+| **Infrastructure**  | Decentralized network          | Centralized servers            |
+| **Control**         | Distributed among users        | Controlled by a single entity  |
+| **Data Management** | Immutable and transparent      | Mutable and potentially opaque |
+| **Trust**           | Trustless, via smart contracts | Requires trust in the provider |
+| **Scalability**     | Limited by network capacity    | Scales with server capacity    |
+| **User Experience** | Can be complex                 | Generally more straightforward |
 
-To introduce dapps, we need to introduce smart contracts – a dapp's backend for lack of a better term. For a detailed overview, head to our section on [smart contracts](./smart_contract.md).
+## References
 
-A smart contract is code that lives on the Universal BCOS blockchain and runs exactly as programmed. Once smart contracts are deployed on the network you can't change them. Dapps can be decentralized because they are controlled by the logic written into the contract, not an individual or company. This also means you need to design your contracts very carefully and test them thoroughly.
+- [The Architecture of a Web 3.0 application](https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application) - Preethi Kasireddy
 
-## Benefits of dapp development
-
-- **Zero downtime** – Once the smart contract is deployed on the blockchain, the network as a whole will always be able to serve clients looking to interact with the contract. Malicious actors, therefore, cannot launch denial-of-service attacks targeted towards individual dapps.
-- **Privacy** – You don’t need to provide real-world identity to deploy or interact with a dapp.
-- **Resistance to censorship** – No single entity on the network can block users from submitting transactions, deploying dapps, or reading data from the blockchain.
-- **Complete data integrity** – Data stored on the blockchain is immutable and indisputable, thanks to cryptographic primitives. Malicious actors cannot forge transactions or other data that has already been made public.
-- **Trustless computation/verifiable behavior** – Smart contracts can be analyzed and are guaranteed to execute in predictable ways, without the need to trust a central authority. This is not true in traditional models; for example, when we use online banking systems, we must trust that financial institutions will not misuse our financial data, tamper with records, or get hacked.
-
-## Drawbacks of dapp development
-
-- **Maintenance** – Dapps can be harder to maintain because the code and data published to the blockchain are harder to modify. It’s hard for developers to make updates to their dapps (or the underlying data stored by a dapp) once they are deployed, even if bugs or security risks are identified in an old version.
-- **Performance overhead** – There is a huge performance overhead, and scaling is really hard. To achieve the level of security, integrity, transparency, and reliability that Universal BCOS aspires to, every node runs and stores every transaction. On top of this, proof-of-stake consensus takes time as well.
-- **Network congestion** – When one dapp uses too many computational resources, the entire network gets backed up. Currently, the network can only process about 10-15 transactions per second; if transactions are being sent in faster than this, the pool of unconfirmed transactions can quickly balloon.
-- **User experience** – It may be harder to engineer user-friendly experiences because the average end-user might find it too difficult to set up a tool stack necessary to interact with the blockchain in a truly secure fashion.
-- **Centralization** – User-friendly and developer-friendly solutions built on top of the base layer of Universal BCOS might end up looking like centralized services anyways. For example, such services may store keys or other sensitive information server-side, serve a frontend using a centralized server, or run important business logic on a centralized server before writing to the blockchain. Centralization eliminates many (if not all) of the advantages of blockchain over the traditional model.
-
-## Tools for creating dapps
-
-**Scaffold-ETH _- Quickly experiment with Solidity using a frontend that adapts to your smart contract._**
-
-- [GitHub](https://github.com/scaffold-eth/scaffold-eth-2)
-- [Example dapp](https://punkwallet.io/)
-
-**One Click Dapp _- FOSS tool for generating dapp frontends from an [ABI](/glossary/#abi)._**
-
-- [oneclickdapp.com](https://oneclickdapp.com)
-- [GitHub](https://github.com/oneclickdapp/oneclickdapp-v1)
-
-**thirdweb _- SDKs in every language, smart contracts, tools, and infrastructure for web3 development._**
-
-- [Homepage](https://thirdweb.com/)
-- [Documentation](https://portal.thirdweb.com/)
-- [GitHub](https://github.com/thirdweb-dev/)
-
-**Crossmint _- Enterprise-grade web3 development platform to deploy smart contracts, enable credit-card and cross chain payments, and use APIs to create, distribute, sell, store, and edit NFTs._**
-
-- [crossmint.com](https://www.crossmint.com)
-- [Documentation](https://docs.crossmint.com)
-- [Discord](https://discord.com/invite/crossmint)
-
-## Further reading
-
-- [The Architecture of a Web 3.0 application](https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application) - _Preethi Kasireddy_
-- [A 2021 guide to decentralized applications](https://limechain.tech/blog/what-are-dapps-the-2021-guide/) - _LimeChain_
-- [What Are Decentralized Apps?](https://www.gemini.com/cryptopedia/decentralized-applications-defi-dapps) - _Gemini_
-- [Popular dapps](https://www.alchemy.com/dapps) - _Alchemy_
+- [A 2021 guide to decentralized applications](https://limechain.tech/blog/what-are-dapps-the-2021-guide/) - LimeChain

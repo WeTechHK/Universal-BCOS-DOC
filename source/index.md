@@ -15,7 +15,7 @@ UBCOS offers several key advantages:
 
 - **High Performance:** UBCOS utilizes an advanced Block-Level Pipelining (BLP) architecture and Deterministic Multi-Contract (DMC) technologies, which enables secure block production and transaction validation within a second. Such performance and security makes UBCOS perfectly suited for business settings that entail large transaction volumes, such as online payments.
 
-- Open for Public Access: UBCOS defines various types of nodes and invites different participants to join as consensus, data, and application nodes. This open design sows the seeds for a vibrant and inclusive ecosystem with clear oversight.
+- **Open for Public Access:** UBCOS defines various types of nodes and invites different participants to join as consensus, data, and application nodes. This open design sows the seeds for a vibrant and inclusive ecosystem with clear oversight.
 
 - **Plug & Play:** UBCOS seamlessly integrates with the Ethereum Virtual Machine (EVM) and supports Solidity smart contracts. This allows developers to use popular tools like MetaMask, Remix, and Hardhat to build applications on the platform with ease. Added to that, UBCOS also offers extensive toolkits for Decentralized Identity (DID), Cross-Chain, Oracles, and other development needs.
 

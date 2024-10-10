@@ -1,63 +1,101 @@
-# What is blockchain
+# Intro to blockchain
 
-A blockchain is a public database that is updated and shared across many computers in a network.
+Blockchain technology has revolutionized digital transactions by introducing a decentralized and secure method of recording and transferring value. This doc delves into the essence of blockchain, its defining characteristics, the rationale behind its necessity, and the mechanics of its operation.
 
-"Block" refers to data and state being stored in consecutive groups known as "blocks". If you send ETH to someone else, the transaction data needs to be added to a block to be successful.
+## What is Blockchain?
 
-"Chain" refers to the fact that each block cryptographically references its parent. In other words, blocks get chained together. The data in a block cannot change without changing all subsequent blocks, which would require the consensus of the entire network.
+In simple words, a blockchain is a distributed and immutable digital ledger that records transactions and tracks the movement of digital assets across its network. Initially developed for financial assets, blockchains have expanded into various applications, embodying the concept of ['Web3'](./web3.md).
 
-Every computer in the network must agree upon each new block and the chain as a whole. These computers are known as "nodes". Nodes ensure everyone interacting with the blockchain has the same data. To accomplish this distributed agreement, blockchains need a consensus mechanism.
+Blockchains are built upon these fundamental pillars:
 
-## What is smart contract
+1. **Decentralization:** Blockchains operate without a central authority, distributing control among network participants. This decentralization ensures transparency, security, and censorship resistance.
+2. **Immutability:** Once recorded, data on a blockchain cannot be altered or deleted. This feature ensures the integrity and trustworthiness of the ledger, making it tamper-proof.
+3. **Transparency:** All transactions on a blockchain are visible to network participants, promoting accountability and trust among users.
 
-Smart contracts are the fundamental building blocks of Universal BCOS's application layer. They are computer programs stored on the blockchain that follow "if this then that" logic, and are guaranteed to execute according to the rules defined by its code, which cannot be changed once created.
+Universal BCOS is a next-generation blockchain infrastructure tailored for the [Web3](./web3.md) economy, which features a highly open network with robust Web3 capabilities and seamless user experience.
 
-Nick Szabo coined the term "smart contract". In 1994, he wrote [an introduction to the concept](https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html), and in 1996 he wrote [an exploration of what smart contracts could do](https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart_contracts_2.html).
+## Why Blockchain?
 
-Szabo envisioned a digital marketplace where automatic, cryptographically-secure processes enable transactions and business functions to happen without trusted intermediaries. Smart contracts on Universal BCOS put this vision into practice.
+The traditional digital transaction models face challenges such as the double-spending problem, where the same digital asset could be fraudulently spent twice. Blockchain elegantly solves this issue without the need for a central authority to verify transactions, enabling secure, transparent, and anonymous peer-to-peer value exchange.
 
-In practice, participants don't write new code every time they want to request a computation on the EVM. Rather, application developers upload programs (reusable snippets of code) into EVM state, and users make requests to execute these code snippets with varying parameters. We call the programs uploaded to and executed by the network smart contracts.
+## Types of Blockchain
 
-At a very basic level, you can think of a smart contract like a sort of vending machine: a script that, when called with certain parameters, performs some actions or computation if certain conditions are satisfied. For example, a simple vendor smart contract could create and assign ownership of a digital asset if the caller sends ETH to a specific recipient.
+Blockchains can be categorized based on their accessibility and control:
 
-Any developer can create a smart contract and make it public to the network, using the blockchain as its data layer, for a fee paid to the network. Any user can then call the smart contract to execute its code, again for a fee paid to the network.
+- Private and Permissioned Blockchains
 
-Thus, with smart contracts, developers can build and deploy arbitrarily complex user-facing apps and services such as: marketplaces, financial instruments, games, etc.
+A permissioned blockchain is run by a **single entity**, such as a company or government, which restricts who can participate and operate a node. This is a completely centralized system and it allows entities to protect users’ identities and data. As a result, these systems are preferred by governments or trade groups aiming to keep control over the system and its data.
 
-## Other basic terminology
+Examples include private blockchains like Hyperledger, designed for secure and private data sharing within controlled environments.
 
-### Native utility token
+- Consortium Blockchains
 
-Unlike payment token, utility token is a type of token that is used to access a particular product or service within a blockchain-based ecosystem and do not provide any ownership or investment stake in a project.
+Consortium blockchains are also permissioned blockchains, but instead of being governed by a single entity, it’s a group of organizations responsible for its management.
 
-### EVM
+A good example of consortium blockchain is [FISCO-BCOS](https://github.com/FISCO-BCOS/FISCO-BCOS). FISCO BCOS has been created to serve as a trusted infrastructure for the digital economy.
 
-The Ethereum Virtual Machine is the global virtual computer whose state every participant on the blockchain network stores and agrees on. Any participant can request the execution of arbitrary code on the EVM; code execution changes the state of the EVM.
+- Public and Permissionless Blockchains
 
-[More on the EVM](../advance/evm.md)
+Public and permissionless blockchains are open to anyone to join and operate a node, offering a higher level of security through decentralization. Public blockchains like Bitcoin exemplify transparency, security, and auditability.
+
+## How Does a Blockchain Work?
+
+A blockchain network operates through nodes that validate and store transactions in blocks. Each block contains a cryptographic hash that links it to the previous block, ensuring that any change in the chain is detectable by the entire network.
+
+Nodes use cryptographic hashes to secure transaction data, converting it into a string of characters that represent the transaction. This hash also includes information from the previous block, creating a chain reaction of dependencies for security.
+
+### Consensus Mechanism
+
+The consensus mechanism is crucial for blockchain networks as it allows nodes to agree on the validity of new blocks. This mechanism ensures data consistency across the network, preventing unauthorized modifications.
+
+[More on Consensus](../advance/consensus.md)
+
+## Smart Contracts
+
+Smart contracts are self-executing contracts with the terms of the agreement directly written into code. They operate on the blockchain, providing trustless, transparent, and automated execution of predefined conditions.
+
+### Origin and Concept
+
+The term "smart contract" was first introduced by Nick Szabo in 1994, envisioning a digital marketplace where transactions could occur without intermediaries. These contracts are now a reality on platforms like Universal BCOS.
+
+### Execution and Deployment
+
+Developers can deploy smart contracts on the blockchain, making them accessible to users for execution. This process involves a fee paid to the network, ensuring the sustainability of the ecosystem.
+
+### Practical Applications
+
+Smart contracts enable the creation of complex applications and services, including marketplaces, financial instruments, and games, by leveraging the blockchain's data layer.
+
+## Other essential Blockchain Terminology
+
+### Native Utility Token
+
+Utility tokens provide access to specific products or services within a blockchain ecosystem. They differ from payment tokens as they do not offer ownership or investment stakes.
+
+### Ethereum Virtual Machine (EVM)
+
+The EVM is a global virtual computer that maintains the state of the blockchain. It allows for the execution of code that modifies its state, reflecting the blockchain's dynamic nature.
 
 ### Nodes
 
-The real-life machines which are storing the EVM state. Nodes communicate with each other to propagate information about the EVM state and new state changes. Any user can also request the execution of code by broadcasting a code execution request from a node. The Universal BCOS network itself is the aggregate of all Universal BCOS nodes and their communications.
+Nodes are the physical machines that store and communicate the state of the EVM. They ensure that all participants have synchronized information and validate new state changes.
 
 [More on nodes](../advance/nodes.md)
 
 ### Accounts
 
-Where native utility token is stored. Users can initialize accounts, deposit token into the accounts, and transfer token from their accounts to other users. Accounts and account balances are stored in a big table in the EVM; they are a part of the overall EVM state.
+Accounts are the storage locations for utility tokens. They can be initialized, credited, and used to transfer tokens, with balances recorded in the EVM's state.
 
 [More on accounts](../advance/accounts.md)
 
 ### Transactions
 
-A "transaction request" is the formal term for a request for code execution on the EVM, and a "transaction" is a fulfilled transaction request and the associated change in the EVM state. Any user can broadcast a transaction request to the network from a node. For the transaction request to affect the agreed-upon EVM state, it must be validated, executed, and "committed to the network" by another node. Execution of any code causes a state change in the EVM; upon commitment, this state change is broadcast to all nodes in the network. Some examples of transactions:
+Transactions are requests for code execution on the EVM. Once validated and executed, they result in a state change that is committed and broadcasted across the network.
 
-- Send X token from my account to Alice's account.
-- Publish some smart contract code into EVM state.
-- Execute the code of the smart contract at address X in the EVM, with arguments Y.
+Transactions are batched into blocks for efficient processing. Blocks typically contain multiple transactions, ensuring the scalability of the blockchain network.
 
 [More on transactions](../advance/transactions.md)
 
-### Blocks
+## References
 
-The volume of transactions is very high, so transactions are "committed" in batches, or blocks. Blocks generally contain dozens to hundreds of transactions.
+Szabo, N. (1994). Smart Contracts. [Online] Available: https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html. [Accessed: Oct. 10, 2024].

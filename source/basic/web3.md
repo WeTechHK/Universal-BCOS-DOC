@@ -1,89 +1,44 @@
-# What is Web3
+# Intro to Web3
 
-Centralization has helped onboard billions of people to the World Wide Web and created the stable, robust infrastructure on which it lives. At the same time, a handful of centralized entities have a stronghold on large swathes of the World Wide Web, unilaterally deciding what should and should not be allowed.
+Web3 represents the next evolutionary step in the World Wide Web, promising a paradigm shift from the centralized control of Web 2.0 to a decentralized, user-centric model. This document outlines the core concepts of Web3 and its advantages over the current web paradigm.
 
-Web3 is the answer to this dilemma. Instead of a Web monopolized by large technology companies, Web3 embraces decentralization and is being built, operated, and owned by its users. Web3 puts power in the hands of individuals rather than corporations.
-Before we talk about Web3, let's explore how we got here.
+## What is Web3?
 
-## The early Web
+Web3 is a vision for a new internet that leverages blockchain technology, cryptocurrencies, and non-fungible tokens (NFTs) to grant users ownership and control over their digital assets and interactions.
 
-Most people think of the Web as a continuous pillar of modern life—it was invented and has just existed since. However, the Web most of us know today is quite different from originally imagined. To understand this better, it's helpful to break the Web's short history into loose periods—Web 1.0 and Web 2.0.
+Unlike Web 2.0, which is characterized by centralized platforms and user-generated content controlled by a few corporations, Web3 distributes power and authority among its users.
 
-### Web 1.0: Read-Only (1990-2004)
+## Key Features of Web3
 
-In 1989, at CERN, Geneva, Tim Berners-Lee was busy developing the protocols that would become the World Wide Web. His idea? To create open, decentralized protocols that allowed information-sharing from anywhere on Earth.
+- **Decentralization:** Web3 eliminates the need for intermediaries by using blockchains, ensuring that data and applications are not controlled by a single entity.
+- **Ownership:** Users have true ownership of their data and digital assets, which can be bought, sold, or traded without platform restrictions.
+- **Native Payments:** Cryptocurrencies facilitate seamless peer-to-peer transactions, reducing reliance on traditional financial systems.
+- **Trustlessness:** Web3 applications operate on smart contracts, which execute as programmed without the need for trusted third parties.
 
-The first inception of Berners-Lee's creation, now known as 'Web 1.0', occurred roughly between 1990 to 2004. Web 1.0 was mainly static websites owned by companies, and there was close to zero interaction between users - individuals seldom produced content - leading to it being known as the read-only web.
+## Benefits of Web3 Over Web 2.0
 
-![Client-server architecture, representing Web 1.0](./web1.png)
+- **Enhanced User Control:** Users maintain full control over their digital assets, unlike Web 2.0 where users can lose access if a platform changes its policies or shuts down.
+- **Censorship Resistance:** Decentralized platforms are less susceptible to censorship, as there is no single point of control that can suppress content or ban users.
+- **Monetization Opportunities:** Creators can monetize their content directly through cryptocurrencies and tokens, without relying on advertising revenue models.
+- **Decentralized Autonomous Organizations (DAOs):** Users can participate in governance and decision-making processes of platforms through DAOs, fostering a more democratic and inclusive internet.
 
-### Web 2.0: Read-Write (2004-now)
+## Limitations of Web3
 
-The Web 2.0 period began in 2004 with the emergence of social media platforms. Instead of a read-only, the web evolved to be read-write. Instead of companies providing content to users, they also began to provide platforms to share user-generated content and engage in user-to-user interactions. As more people came online, a handful of top companies began to control a disproportionate amount of the traffic and value generated on the web. Web 2.0 also birthed the advertising-driven revenue model. While users could create content, they didn't own it or benefit from its monetization.
+While Web3 offers a promising vision for the future of the internet, it is not without its challenges:
 
-![Client-server architecture, representing Web 2.0](./web2.png)
+- **Complexity and Accessibility:** The technical nature of Web3 can be daunting for the average user. Understanding blockchain, managing private keys, and interacting with decentralized applications (dApps) present a high barrier to entry.
+- **Scalability:** Many blockchain networks that underpin Web3 applications currently struggle with scalability. They can handle a limited number of transactions per second, which can lead to network congestion and high transaction fees.
+- **Regulatory Uncertainty:** The decentralized nature of Web3 poses challenges for regulators. There is a risk of inconsistent or restrictive regulations that could hinder innovation and adoption.
+- **Security Concerns:** Despite the inherent security of blockchain technology, Web3 applications are not immune to exploits and hacks. Users must be vigilant about the security of their wallets and transactions.
+- **Environmental Impact:** Some blockchain networks rely on energy-intensive consensus mechanisms, leading to concerns about their environmental footprint.
+- **User Experience:** Current Web3 interfaces are often not as user-friendly as those of Web 2.0 platforms. Improving UX is critical for broader adoption.
 
-## Web 3.0: Read-Write-Own
+## Conclusion
 
-The premise of 'Web 3.0' was coined by [Universal BCOS](/what-is-Universal BCOS/) co-founder Gavin Wood shortly after Universal BCOS launched in 2014. Gavin put into words a solution for a problem that many early crypto adopters felt: the Web required too much trust. That is, most of the Web that people know and use today relies on trusting a handful of private companies to act in the public's best interests.
+Web3 offers a transformative approach to the internet, prioritizing user empowerment, decentralization, and direct ownership. As the technology matures, it has the potential to disrupt the current web paradigm, creating a more equitable and user-centric digital landscape.
 
-![Decentralized node architecture, representing Web3](./web3.png)
+## References
 
-### What is Web3?
+Wood, G. (2014). A Vision for Web3. [Online] Available: [Link to the original source if available]. [Accessed: Date of Access].
 
-Web3 has become a catch-all term for the vision of a new, better internet. At its core, Web3 uses blockchains, cryptocurrencies, and NFTs to give power back to the users in the form of ownership. [A 2020 post on Twitter](https://twitter.com/himgajria/status/1266415636789334016) said it best: Web1 was read-only, Web2 is read-write, Web3 will be read-write-own.
-
-#### Core ideas of Web3
-
-Although it's challenging to provide a rigid definition of what Web3 is, a few core principles guide its creation.
-
-- **Web3 is decentralized:** instead of large swathes of the internet controlled and owned by centralized entities, ownership gets distributed amongst its builders and users.
-- **Web3 is permissionless:** everyone has equal access to participate in Web3, and no one gets excluded.
-- **Web3 has native payments:** it uses cryptocurrency for spending and sending money online instead of relying on the outdated infrastructure of banks and payment processors.
-- **Web3 is trustless:** it operates using incentives and economic mechanisms instead of relying on trusted third-parties.
-
-### Why is Web3 important?
-
-Although Web3's killer features aren't isolated and don't fit into neat categories, for simplicity we've tried to separate them to make them easier to understand.
-
-#### Ownership
-
-Web3 gives you ownership of your digital assets in an unprecedented way. For example, say you're playing a web2 game. If you purchase an in-game item, it is tied directly to your account. If the game creators delete your account, you will lose these items. Or, if you stop playing the game, you lose the value you invested into your in-game items.
-
-Web3 allows for direct ownership through non-fungible tokens (NFTs). No one, not even the game's creators, has the power to take away your ownership. And, if you stop playing, you can sell or trade your in-game items on open markets and recoup their value.
-
-#### Censorship resistance
-
-The power dynamic between platforms and content creators is massively imbalanced.
-
-OnlyFans is a user-generated adult content site with over 1-million content creators, many of which use the platform as their primary source of income. In August 2021, OnlyFans announced plans to ban sexually explicit content. The announcement sparked outrage amongst creators on the platform, who felt they were getting robbed of an income on a platform they helped create. After the backlash, the decision got quickly reversed. Despite the creators winning this battle, it highlights a problem for Web 2.0 creators: you lose the reputation and following you accrued if you leave a platform.
-
-On Web3, your data lives on the blockchain. When you decide to leave a platform, you can take your reputation with you, plugging it into another interface that more clearly aligns with your values.
-
-Web 2.0 requires content creators to trust platforms not to change the rules, but censorship resistance is a native feature of a Web3 platform.
-
-#### Decentralized autonomous organizations (DAOs)
-
-As well as owning your data in Web3, you can own the platform as a collective, using tokens that act like shares in a company. DAOs let you coordinate decentralized ownership of a platform and make decisions about its future.
-
-DAOs are defined technically as agreed-upon [smart contracts](./smart_contract.md) that automate decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.
-
-However, people define many Web3 communities as DAOs. These communities all have different levels of decentralization and automation by code. Currently, we are exploring what DAOs are and how they might evolve in the future.
-
-## Web3 limitations
-
-Despite the numerous benefits of Web3 in its current form, there are still many limitations that the ecosystem must address for it to flourish.
-
-### User experience
-
-The technical barrier to entry to using Web3 is currently too high. Users must comprehend security concerns, understand complex technical documentation, and navigate unintuitive user interfaces. [Wallet providers](./wallet.md), in particular, are working to solve this, but more progress is needed before Web3 gets adopted en masse.
-
-### Centralized infrastructure
-
-The Web3 ecosystem is young and quickly evolving. As a result, it currently depends mainly on centralized infrastructure (GitHub, Twitter, Discord, etc.). Many Web3 companies are rushing to fill these gaps, but building high-quality, reliable infrastructure takes time.
-
-## A decentralized future
-
-Web3 is a young and evolving ecosystem. Gavin Wood coined the term in 2014, but many of these ideas have only recently become a reality. In the last year alone, there has been a considerable surge in the interest in cryptocurrency, improvements to layer 2 scaling solutions, massive experiments with new forms of governance, and revolutions in digital identity.
-
-We are only at the beginning of creating a better Web with Web3, but as we continue to improve the infrastructure that will support it, the future of the Web looks bright.
+Gajria, H. (2020). Twitter Post on Web3. [Online] Available: https://twitter.com/himgajria/status/1266415636789334016. [Accessed: Oct. 10, 2024].
