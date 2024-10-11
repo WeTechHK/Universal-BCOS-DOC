@@ -1,107 +1,35 @@
-# Gas
+# Transaction fees
 
-Gas is essential to the Universal BCOS network. It is the fuel that allows it to operate, in the same way that a car needs gasoline to run.
+## Overview
 
-## Prerequisites
+The fee for a blockchain transaction is calculated using the following formula:
 
-To better understand this page, we recommend you first read up on [transactions](./transactions.md) and the [EVM](./evm.md).
+\[ \text{Transaction Fee} = (\text{Gas Used}) \times (\text{Gas Price}) \]
 
-## What is gas?
+To illustrate, suppose you're filling up gas at a gas station. The gas price is determined by the refinery every day, and today's price is \$2. If you fill 15L up, then you would pay \$30 = 15L x \$2/1L for it, and the \$30 will be paid out of your bank account.
 
-Gas refers to the unit that measures the amount of computational effort required to execute specific operations on the Universal BCOS network.
+Similarly, suppose a transaction spent 21000 gas and the gas price of the transaction was 25 Gwei. Then the gas fee is 525000 Gwei. This amount would be deducted from the sender (`from` account) balance.
 
-Since each Universal BCOS transaction requires computational resources to execute, those resources have to be paid for to ensure Universal BCOS is not vulnerable to spam and cannot get stuck in infinite computational loops. Payment for computation is made in the form of a gas fee.
+## Gas price
 
-The gas fee is **the amount of gas used to do some operation, multiplied by the cost per unit gas**. The fee is paid regardless of whether a transaction succeeds or fails.
+The gas price is the amount of price you are willing to pay for each unit of gas. The unit of gas price is literally refered to [Ethereum Unit](https://www.ethereum-ecosystem.com/unit-converter).
 
-![A diagram showing where gas is needed in EVM operations](./gas.png)
+For example, three main units are:
 
-Gas fees have to be paid in Universal BCOS's native utilities currency, ether (ETH). Gas prices are usually quoted in gwei, which is a denomination of ETH. Each gwei is equal to one-billionth of an ETH (0.000000001 ETH or 10<sup>-9</sup> ETH).
+- Wei: The smallest unit of Ether
+- Gwei: Equal to 1,000,000,000 Wei
+- Ether: The main unit, equal to 1,000,000,000 Gwei or 1,000,000,000,000,000,000 Wei
 
-For example, instead of saying that your gas costs 0.000000001 ether, you can say your gas costs 1 gwei.
+## Gas used
 
-The word 'gwei' is a contraction of 'giga-wei', meaning 'billion wei'. One gwei is equal to one billion wei. Wei itself (named after [Wei Dai](https://wikipedia.org/wiki/Wei_Dai), creator of [b-money](https://www.investopedia.com/terms/b/bmoney.asp)) is the smallest unit of ETH.
+Every state-changing action on the blockchain requires gas. For instance, when executing smart contracts or using tokens like ERC-20, the sender must pay for the computation and storage. The amount paid is determined by the gas required. The gas has no unit, and we just say like "21000 gas".
 
-## How are gas fees calculated?
+The actual gas used is determined post-execution and can be retrieved from the transaction receipt.
 
-You can set the amount of gas you are willing to pay when you submit a transaction. By offering a certain amount of gas, you are bidding for your transaction to be included in the next block. If you offer too little, validators are less likely to choose your transaction for inclusion, meaning your transaction may execute late or not at all. If you offer too much, you might waste some ETH. So, how can you tell how much to pay?
+## Gas limit
 
-The total gas you pay is divided into two components: the `base fee` and the `priority fee` (tip).
+The gas limit is the maximum gas units one is willing to spend on a transaction. If you set a limit of 50,000 for a transfer that uses 21,000 gas, you get 29,000 gas back. However, if the limit is too low (e.g., 20,000 for a transfer), the transaction will not complete, and the gas is still consumed, resulting in no state change but a deduction in the sender's balance.
 
-The `base fee` is set by the protocol - you have to pay at least this amount for your transaction to be considered valid. The `priority fee` is a tip that you add to the base fee to make your transaction attractive to validators so that they choose it for inclusion in the next block.
+## UBCOS specific configuration on gas
 
-A transaction that only pays the `base fee` is technically valid but unlikely to be included because it offers no incentive to the validators to choose it over any other transaction. The 'correct' `priority` fee is determined by the network usage at the time you send your transaction - if there is a lot of demand then you might have to set your `priority` fee higher, but when there is less demand you can pay less.
-
-For example, let's say Jordan has to pay Taylor 1 ETH. An ETH transfer requires 21,000 units of gas, and the base fee is 10 gwei. Jordan includes a tip of 2 gwei.
-
-The total fee would now be equal to:
-
-`units of gas used * (base fee + priority fee)`
-
-where the `base fee` is a value set by the protocol and the `priority fee` is a value set by the user as a tip to the validator.
-
-i.e. `21,000 * (10 + 2) = 252,000 gwei` (0.000252 ETH).
-
-When Jordan sends the money, 1.000252 ETH will be deducted from Jordan's account. Taylor will be credited 1.0000 ETH. The validator receives the tip of 0.000042 ETH. The `base fee` of 0.00021 ETH is burned.
-
-### Base fee
-
-Every block has a base fee which acts as a reserve price. To be eligible for inclusion in a block the offered price per gas must at least equal the base fee. The base fee is calculated independently of the current block and is instead determined by the blocks before it - making transaction fees more predictable for users. When the block is created this **base fee is "burned"**, removing it from circulation.
-
-The base fee is calculated by a formula that compares the size of the previous block (the amount of gas used for all the transactions) with the target size. The base fee will increase by a maximum of 12.5% per block if the target block size is exceeded. This exponential growth makes it economically non-viable for block size to remain high indefinitely.
-
-| Block Number | Included Gas | Fee Increase | Current Base Fee |
-|--------------|-------------:|-------------:|-----------------:|
-| 1            |          15M |           0% |         100 gwei |
-| 2            |          30M |           0% |         100 gwei |
-| 3            |          30M |        12.5% |       112.5 gwei |
-| 4            |          30M |        12.5% |       126.6 gwei |
-| 5            |          30M |        12.5% |       142.4 gwei |
-| 6            |          30M |        12.5% |       160.2 gwei |
-| 7            |          30M |        12.5% |       180.2 gwei |
-| 8            |          30M |        12.5% |       202.7 gwei |
-
-Following the table above - to create a transaction on block number 9, a wallet will let the user know with certainty that the **maximum base fee** to be added to the next block is `current base fee * 112.5%` or `202.7 gwei * 112.5% = 228.1 gwei`.
-
-It's also important to note it is unlikely we will see extended spikes of full blocks because of the speed at which the base fee increases preceding a full block.
-
-| Block Number | Included Gas | Fee Increase | Current Base Fee |
-|--------------|-------------:|-------------:|-----------------:|
-| 30           |          30M |        12.5% |      2705.6 gwei |
-| ...          |          ... |        12.5% |              ... |
-| 50           |          30M |        12.5% |     28531.3 gwei |
-| ...          |          ... |        12.5% |              ... |
-| 100          |          30M |        12.5% |  10302608.6 gwei |
-
-### Priority fee (tips)
-
-The priority fee (tip) incentivizes validators to include a transaction in the block. Without tips, validators would find it economically viable to mine empty blocks, as they would receive the same block reward. Small tips give validators a minimal incentive to include a transaction. For transactions to be preferentially executed ahead of other transactions in the same block, a higher tip can be added to try to outbid competing transactions.
-
-### Max fee
-
-To execute a transaction on the network, users can specify a maximum limit they are willing to pay for their transaction to be executed. This optional parameter is known as the `maxFeePerGas`. For a transaction to be executed, the max fee must exceed the sum of the base fee and the tip. The transaction sender is refunded the difference between the max fee and the sum of the base fee and tip.
-
-### Calculating gas fees in practice
-
-You can explicitly state how much you are willing to pay to get your transaction executed. However, most wallet providers will automatically set a recommended transaction fee (base fee + recommended priority fee) to reduce the amount of complexity burdened onto their users.
-
-## Why do gas fees exist?
-
-In short, gas fees help keep the Universal BCOS network secure. By requiring a fee for every computation executed on the network, we prevent bad actors from spamming the network. In order to avoid accidental or hostile infinite loops or other computational wastage in code, each transaction is required to set a limit to how many computational steps of code execution it can use. The fundamental unit of computation is "gas".
-
-Although a transaction includes a limit, any gas not used in a transaction is returned to the user (i.e. `max fee - (base fee + tip)` is returned).
-
-## What is the gas limit?
-
-The gas limit refers to the maximum amount of gas you are willing to consume on a transaction. More complicated transactions involving [smart contracts](../basic/smart_contract.md) require more computational work, so they require a higher gas limit than a simple payment. A standard ETH transfer requires a gas limit of 21,000 units of gas.
-
-For example, if you put a gas limit of 50,000 for a simple ETH transfer, the EVM would consume 21,000, and you would get back the remaining 29,000. However, if you specify too little gas, for example, a gas limit of 20,000 for a simple ETH transfer, the EVM will consume your 20,000 gas units attempting to fulfill the transaction, but it will not complete. The EVM then reverts any changes, but since the validator has already done 20k gas units worth of work, that gas is consumed.
-
-## Further reading
-
-- [Gas Explained](https://defiprime.com/gas)
-- [Reducing the gas consumption of your Smart Contracts](https://medium.com/coinmonks/8-ways-of-reducing-the-gas-consumption-of-your-smart-contracts-9a506b339c0a)
-- [Proof of Stake versus Proof of Work](https://blockgeeks.com/guides/proof-of-work-vs-proof-of-stake/)
-- [Gas Optimization Strategies for Developers](https://www.alchemy.com/overviews/solidity-gas-optimization)
-- [EIP-1559 docs](https://eips.Universal BCOS.org/EIPS/eip-1559).
-- [Tim Beiko's EIP-1559 Resources](https://hackmd.io/@timbeiko/1559-resources).
+The gas price is controlled by UBCOS system configuration, and it can be adjusted by the system administrator.  For more details on UBCOS system configuration, refer to the [UBCOS System Config](./evm.md).

@@ -1,4 +1,4 @@
-# Consensus Algorithm
+# Consensus algorithm
 
 Blockchain system guarantees system consistency through consensus algorithm. In theory, consensus is a fundamental problem in distributed computing and multi-agent systems is to achieve overall system reliability in the presence of a number of faulty processes, which often requires coordinating processes to reach consensus, or agree on some data value that is needed during computation.
 

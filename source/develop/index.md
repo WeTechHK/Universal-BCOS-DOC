@@ -2,13 +2,12 @@
 myst:
   html_meta:
     "description lang=en": |
-      Usage of Universal BCOS.
+      Development steps of Universal BCOS.
 ---
 
-# Usage
+# Development
 
 ```{toctree}
-:caption: Usage
 :maxdepth: 1
 
 wallet_usage
