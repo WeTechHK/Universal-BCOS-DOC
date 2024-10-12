@@ -1,4 +1,4 @@
-# Build from source
+# Build UBCOS from source
 
 Universal BCOS uses the `CMake` build system to generate platform-specific build files, which means the
 workflow is very similar no matter what operating system you use:
@@ -73,7 +73,7 @@ After compiling, you can use `build_chain.sh` script to specify executable binar
 # Into the tool directory
 cd tools/BcosAirBuilder
 # Build a local chain, and it will generate a directory named nodes/
-bash build_chain.sh -l "127.0.0.1:4" -p 20200,30300 -e ../../build/fisco-bcos-air/fisco-bcos
+bash build_chain.sh -l "127.0.0.1:4" -p 20200,30300 -e ../../build/universal-bcos-air/universal-bcos
 # Start the local chain
 cd nodes/127.0.0.1/
 bash start_all.sh

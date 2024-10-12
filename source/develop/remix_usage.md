@@ -6,7 +6,7 @@ Remix is a browser-based IDE (Integrated Development Environment) for developing
 * Compile the smart contract.
 * Set up deployment environment
 * Import account
-* Connect Kaia to Remix using MetaMask
+* Connect UBCOS to Remix using MetaMask
 * Deploy the smart contract.
 * Verify the smart contract.
 
@@ -18,7 +18,7 @@ To start building a smart contract, click on **New File** icon in the **contract
 
 Next is to copy and paste the smart contract code provided below into the newly created MyToken.sol file.
 
-```sol
+```solidity
 // SPDX-License-Identifier: Apache 2.0
 pragma solidity ^0.8.20;
 
@@ -34,7 +34,7 @@ contract MyToken is ERC20, ERC20Permit {
 }
 ```
 
-![](./remix-create-new-file.png)
+![](../_static/develop/remix-create-new-file.png)
 
 ## Compile smart contract
 
@@ -46,14 +46,14 @@ To compile your contract, do the following:
 * Cliick on the Compile MyToken.sol  button to compile `MyToken.sol` contract.
 * After successful compilation, it will show a green tick mark on the Compiler tab button
 
-![](./remix-compile-contract.png)
+![](../_static/develop/remix-compile-contract.png)
 
 ## Setting up deployment environment
 
 * Select the appropriate [Environment].
 * You can select Injected Provider - MetaMask
 
-![](./remix-deploy-env.png)
+![](../_static/develop/remix-deploy-env.png)
 
 ## Import account in Metamask
 
@@ -64,10 +64,25 @@ You can use Metamask create new account or import exist account. [More about acc
 
 ## Deploying the smart contract
 
-In this section, we will deploy the MyToken.sol contract using Kaia Wallet. Having compiled the contract in the Compile Section, follow the deployment process below:
+In this section, we will deploy the MyToken.sol contract using Metamask. Having compiled the contract in the Compile Section, follow the deployment process below:
 
+* Go to the **Deploy & run transactions** tab
 * Set your deployment ENVIRONMENT to `Injected Provider -  Metamask`.
 * Select the contract you want to deploy in the CONTRACT field.
-* Click on the Deploy button. This would generate a Kaia Wallet popup that requires transaction confirmation. Simply confirm the transaction!
+* Click on the Deploy button. This would generate a Metamask popup that requires transaction confirmation. Simply confirm the transaction!
 
-![](./remix-deploy-contract.png)
+![](../_static/develop/remix-deploy-contract.png)
+
+## Interacting with the smart contract
+
+After deploying the contract, you can interact with the contract by calling the `mint` function. This function will mint tokens to the account that deployed the contract.
+
+* Go to the **Deploy & run transactions** tab
+* Click on the deployed contract.
+* Click on the **mint** function.
+* Enter the amount of tokens you want to mint.
+* Click on the **transact** button.
+* Confirm the transaction in Metamask.
+* You can click on the "Terminal" tab below the page to see the transaction details.
+
+![](../_static/develop/remix-transact.png)

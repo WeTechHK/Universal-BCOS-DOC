@@ -4,7 +4,9 @@
 
 The fee for a blockchain transaction is calculated using the following formula:
 
-\[ \text{Transaction Fee} = (\text{Gas Used}) \times (\text{Gas Price}) \]
+```text
+Transaction Fee = (Gas Used) * (Gas Price)
+```
 
 To illustrate, suppose you're filling up gas at a gas station. The gas price is determined by the refinery every day, and today's price is \$2. If you fill 15L up, then you would pay \$30 = 15L x \$2/1L for it, and the \$30 will be paid out of your bank account.
 

@@ -50,8 +50,8 @@ When the leader fails, a view switch occurs. If the view switch is successful(At
 
 In the Universal BCOS system, the formula for calculating the leader index is as follows:
 
-```math
-leader_{idx} = (view + block_{number})\ mod\ n
+```text
+leader_idx = (view + block_number) mod node_num
 ```
 
 ### Core processes

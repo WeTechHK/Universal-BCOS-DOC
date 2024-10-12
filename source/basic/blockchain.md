@@ -4,7 +4,7 @@ Blockchain technology has revolutionized digital transactions by introducing a d
 
 ## What is Blockchain?
 
-In simple words, a blockchain is a distributed and immutable digital ledger that records transactions and tracks the movement of digital assets across its network. Initially developed for financial assets, blockchains have expanded into various applications, embodying the concept of ['Web3'](./web3.md).
+In simple words, a blockchain is a distributed and immutable digital ledger that records transactions and tracks the movement of digital assets across its network. Initially developed for financial assets, blockchains have expanded into various applications, embodying the concept of '[Web3](./web3.md)'.
 
 Blockchains are built upon these fundamental pillars:
 

@@ -6,9 +6,9 @@ Universal BCOS is a distributed network of computers (known as nodes) running so
 
 There are three types of nodes:
 
-- Consensus Node:
-- Observer Node:
-- Light Node:
+- Consensus Node
+- Observer Node
+- Light Node
 
 ### Consensus node
 
@@ -28,12 +28,14 @@ Observer nodes are full nodes that verify every block from genesis but do not ha
 
 ### Light node
 
-Instead of downloading every block, light nodes only download block headers. These headers contain summary information about the contents of the blocks. Any other information the light node requires gets requested from a full node. The light node can then independently verify the data they receive against the state roots in the block headers. Light nodes enable users to participate in the Universal BCOS network without the powerful hardware or high bandwidth required to run full nodes. Eventually, light nodes might run on mobile phones or embedded devices. The light nodes do not participate in consensus (i.e. they cannot be miners/validators), but they can access the Universal BCOS blockchain with the same functionality and security guarantees as a full node.
+The light node can then independently verify the data they receive against the state roots in the block headers. Light nodes enable users to participate in the Universal BCOS network without the powerful hardware or high bandwidth required to run full nodes.
+
+- Stores block headers only
+- Sync block headers from Consensus node and verifies merkle proof
+- Serves the network and retransmission request to full nodes
 
 ## Running your own node
 
-Interested in running your own Universal BCOS client?
+Interested in running your own Universal BCOS node?
 
-For a beginner-friendly introduction visit our [run a node](/run-a-node) page to learn more.
-
-If you're more of a technical user, dive into more details and options on how to [spin up your own node](/developers/docs/nodes-and-clients/run-a-node/).
+For a beginner-friendly introduction visit our [run a node](../develop/run_node.md) page to learn more.

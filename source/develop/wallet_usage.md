@@ -1,64 +1,65 @@
 # Connecting MetaMask to UBCOS
 
-Currently, Universal BCOS has a public testnet called POTOS, and this section will provide an example of connecting to POTOS using MetaMask.
+This section will provide an example of connecting to local UBCOS network using MetaMask. Local UBCOS private chain is a private chain that you can deploy on your local machine. If you are using a local UBCOS private chain, please make sure you have the chain ID and RPC URL. The chain ID is the ID of the chain you are connecting to, default chain ID for UBCOS is 20200. The RPC URL is the URL of the node you are connecting to, default URL is http://127.0.0.1:8545.
 
-If you wanna connecting your local UBCOS private chain with MetaMask, change RPC URL to http://127.0.0.1:8545 and continue follow steps. Deploy local UBCOS private chain you can check [here](../develop/deploy_guide.md).
-
-## 1. Create A Wallet
+## Step 1. Create A Wallet
 
 If you do not have a wallet yet, create an account using MetaMask (choose any Ethereum-compatible account type) [here](https://metamask.io/download/). For more information on MetaMask, please refer [here](https://docs.metamask.io/).
 
-## 2. Connect MetaMask to the Testnet
+## Step 2. Connect MetaMask to the UBCOS
 
-To access the Testnet, follow steps below to configure MetaMask:
+To access the Universal BCOS network, follow steps below to configure MetaMask:
 
 - Open the “Network” setting, click “Add a network”:
 
-    ![](./connect_1.png)
+    ![](../_static/develop/connect_1.png)
 
 - Click “Add a network manually”:
 
-    ![](./connect_2.png)
+    ![](../_static/develop/connect_2.png)
 
-- Fill in required information for the Testnet and click “Save”:
+- Fill in required information for the Universal BCOS network and click “Save”. If you are connecting to your local UBCOS private chain, fill in the RPC URL with http://[IP]:[PORT] and Chain ID with the chain ID of your local UBCOS private chain.
+  - The default chain ID for UBCOS is `20200` and the default RPC URL is `http://127.0.0.1:8545`. The `Network name` and `Currency symbol` are not required, you can fill in any name you like.
 
-    ![](./connect_3.png)
+    ![](../_static/develop/connect_3.png)
 
-- You will see the Testnet network added to the list.
+- You will see the Universal BCOS network added to the list.
 
-## 3. Receive Testnet Tokens
+## Step 3. Get Utility Tokens
 
-Supply your wallet address [here](https://docs.eightart.hk/en/develop/dev_guide/testnet_guide.html#faucet_site.com) to get free Testnet faucet funds.
+Utility tokens are required to pay for gas fees when deploying contracts or interacting with contracts on the Universal BCOS network.
 
-Testnet tokens are crypto assets created on a parallel test network to the Mainnet. Developers use the Testnet to test smart contracts and transactions without risking real-world implications on the Mainnet.
+Billing Model is not availible by default, you can check this [link](./management.md) to configure the billing model.
 
-These Testnet tokens work like Mainnet coins, covering gas fees during testing. However, as they are issued in the parallel environment, Testnet tokens have no real-world value on the Mainnet.
+Supply your wallet address to your local UBCOS network operator to get free utility token funds.
 
 You may find your wallet address here:
 
-![](./wallet_address.png)
+![](../_static/develop/wallet_address.png)
 
-## 4. Trading with MetaMask Wallet
+## Step 4. Trading with MetaMask Wallet
 
-Once balance is updated, you can start trading on the Testnet.
+Once balance is updated, you can start trading on the UBCOS network.
 
-![](./updated_balance.png)
+![](../_static/develop/updated_balance.png)
 
 - To transfer tokens to another wallet address, make sure that you set a gas limit >= 210,000 WEI.
 
-![](./transfer.png)
+![](../_static/develop/transfer.png)
 
 - Confirm the transaction:
 
-![](./transfer_confirm.png)
+![](../_static/develop/transfer_confirm.png)
 
 - Details will be displayed confirmation:
 
-![](./transaction_info.png)
+![](../_static/develop/transaction_info.png)
 
 ## Explorer
 
-Check activities taking place on the Testnet [here](https://scan-testnet.eightart.hk/weco).
+You can check activities taking place on the Explorer.
+
+For more details on how to use the explorer, please refer [here](./explorer_usage.md).
 
 ## Interact with Remix
 
@@ -66,8 +67,8 @@ Configure environment information in Deployment & Run Transactions tab [here](ht
 
 Select `Injected Provider - MetaMask` for `Environment`:
 
-![](./remix_config.png)
+![](../_static/develop/remix_config.png)
 
 When initiating a deployment or calling on a contract, Remix will send the contract content to MetaMask. You will need to confirm transaction on MetaMask.
 
-Find more information on Remix Online IDE [here](https://remix-ide.readthedocs.io/en/latest/).
+For more steps on how to deploy a contract using Remix, please refer [here](./remix_usage.md).

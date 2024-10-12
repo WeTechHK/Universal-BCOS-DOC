@@ -26,7 +26,7 @@ Unlike Web 2.0, which is characterized by centralized platforms and user-generat
 
 While Web3 offers a promising vision for the future of the internet, it is not without its challenges:
 
-- **Complexity and Accessibility:** The technical nature of Web3 can be daunting for the average user. Understanding blockchain, managing private keys, and interacting with decentralized applications (dApps) present a high barrier to entry.
+- **Complexity and Accessibility:** The technical nature of Web3 can be daunting for the average user. Understanding blockchain, managing private keys, and interacting with decentralized applications (DApps) present a high barrier to entry.
 - **Scalability:** Many blockchain networks that underpin Web3 applications currently struggle with scalability. They can handle a limited number of transactions per second, which can lead to network congestion and high transaction fees.
 - **Regulatory Uncertainty:** The decentralized nature of Web3 poses challenges for regulators. There is a risk of inconsistent or restrictive regulations that could hinder innovation and adoption.
 - **Security Concerns:** Despite the inherent security of blockchain technology, Web3 applications are not immune to exploits and hacks. Users must be vigilant about the security of their wallets and transactions.

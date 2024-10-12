@@ -7,7 +7,7 @@ html_theme.sidebar_secondary.remove: true
 ---
 # Universal BCOS
 
-Universal BCOS (UBCOS) is a next-generation blockchain infrastructure tailored for the Web3 economy. Built to financial-grade standards, UBCOS features a highly open network with robust Web3 capabilities and seamless user experience, all of which are engineered for laying a solid foundation for the development of Hong Kong’s Web3 ecosystem.
+Universal BCOS (UBCOS) is a next-generation blockchain tailored for the Web3 economy. Built to financial-grade standards, UBCOS features a highly open network with robust Web3 capabilities and seamless user experience, all of which are engineered for laying a solid foundation for the development of Hong Kong’s Web3 ecosystem.
 
 ## Key advantages
 
@@ -38,7 +38,7 @@ research/index
 community/index
 ```
 
-## Fundamentals
+## Basic
 
 Understand the fundamentals of Universal BCOS.
 
@@ -62,13 +62,16 @@ Advanced concepts and operations of Universal BCOS.
 
 Information about connecting, configuration, and developing on Universal BCOS.
 
-- [](./develop/wallet_usage.md)
-- [](./develop/remix_usage.md)
-- [](./develop/explorer_usage.md)
 - [](./develop/solidity.md)
-- [](./develop/networks.md)
-- [](./develop/deploy_guide.md)
+- [](./develop/remix_usage.md)
+- [](./develop/wallet_usage.md)
+- [](./develop/hardhat_usage.md)
+- [](./develop/explorer_usage.md)
 - [](./develop/dapp_guide.md)
+- [](./develop/build_chain.md)
+- [](./develop/run_node.md)
+- [](./develop/config.md)
+- [](./develop/management.md)
 - [](./develop/compile_from_source.md)
 
 ## Research

@@ -1,10 +1,8 @@
-# WeCoScan usage
+# Explorer usage
 
-WeCoScan is a blockchain explorer for the Universal BCOS's public testnet POTOS. WeCoScan gives you an insight about the POTOS network by monitoring the network health and providing various statistics of POTOS network. You can also explore the block and transaction data and the list of smart contracts on the POTOS network.
+Explorer is blockchain explorer for Universal BCOS. Explorer gives you an insight about the blockchain network by monitoring the network health and providing various statistics. You can also explore the block and transaction data and the list of smart contracts on the Universal BCOS blockchain network.
 
-Visit https://scan-testnet.eightart.hk/weco/#/chain to explore more.
-
-![](./WeCoScan-main.png)
+![](../_static/develop/WeCoScan-main.png)
 
 ## Major Features
 
@@ -15,15 +13,15 @@ Please note that some of the features are under development.
 * Transaction search
 * Block proposer information
 
-In the subsequent sections, we will visit the major functions and screenshots of WeCoScan.
+In the subsequent sections, we will visit the major functions and screenshots of Explorer.
 
 ## Dashboard
 
 Network information is presented in the dashboard. The information includes transaction amount, last block committed, and the latest trends in transactions.
 
-![](./wecoscan-dashboard.png)
+![](../_static/develop/wecoscan-dashboard.png)
 
-* Transactions: Totoal transactions amount in POTOS testnet.
+* Transactions: Totoal transactions amount.
 * Last Block: The latest block height. It shows that how many blocks have been generated since the genesis.
 * Transaction History: The graphs show the number of daily transactions over the last 14 days. You can see the trend in the transaction volume over the last two weeks.
 
@@ -31,11 +29,11 @@ Network information is presented in the dashboard. The information includes tran
 
 These lists show recently created blocks and transactions respectively.
 
-![](./wecoscan-recent.png)
+![](../_static/develop/wecoscan-recent.png)
 
 ## Block detail
 
-![](./wecoscan-block.png)
+![](../_static/develop/wecoscan-block.png)
 
 Overall information about the block.
 
@@ -50,7 +48,7 @@ Overall information about the block.
 
 ## Transaction detail
 
-![](./wecoscan-tx.png)
+![](../_static/develop/wecoscan-tx.png)
 
 Overall information about the transaction.
 
@@ -62,14 +60,14 @@ Overall information about the transaction.
 
 Through WeCoScan, you can search for the information about transactions and blocks. Entering a valid keyword will take you to the detail view of the entity.
 
-![](./wecoscan-search.png)
+![](../_static/develop/wecoscan-search.png)
 
 Searchable keywords are hash of block and transaction, and only supported in the following formats:
 
 * 66 characters long
 * Starts with a prefix `0x`
-* Hexadecimal number only \[0~9, a~f\]
+* Hexadecimal number only [0~9, a~f]
 
 If you search for a keyword that doesn't fit in the specified format or information hasn't yet been generated, no result page will appear.
 
-![](./wecoscan-search-error.png)
+![](../_static/develop/wecoscan-search-error.png)

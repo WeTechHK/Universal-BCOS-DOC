@@ -18,7 +18,7 @@ Accounts within the Universal BCOS ecosystem are structured with specific fields
 The Universal BCOS platform distinguishes between two primary types of accounts:
 
 - **Externally-Owned Account (EOA):** These accounts are controlled by individuals holding the corresponding private keys.
-- **Contract Account:** A smart contract deployed to the network, controlled by code. Learn about [smart contracts](../basic/smart_contract.md)
+- **Contract Account:** A smart contract deployed to the network, controlled by code.
 
 Both account types have the ability to:
 
