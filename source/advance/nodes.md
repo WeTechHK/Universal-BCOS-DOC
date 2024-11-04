@@ -1,6 +1,6 @@
 # Nodes
 
-Universal BCOS is a distributed network of computers (known as nodes) running software that can verify blocks and transaction data. The software must be run on your computer or server to turn it into an Universal BCOS node.
+Universal BCOS is a distributed network of computers (known as nodes) running software that can verify blocks and transaction data. The software must be run on your own environment to turn it into an Universal BCOS node.
 
 ## Node types
 

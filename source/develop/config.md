@@ -16,12 +16,9 @@ On-chain configuration includes the genesis block and system settings.
 
 Node genesis block configurations are located in the configuration file `config.genesis`.
 
-```eval_rst
-.. note::
-    - **Consistency of the genesis block configuration across all nodes in the group is mandatory.**
-    - **The genesis block configuration file cannot be changed after chain initialization.**
-    - Any changes to the genesis block configuration after chain initialization will not take effect; the system will still use the genesis configuration from the time of chain initialization.
-```
+- **Consistency of the genesis block configuration acrossall nodes in the group is mandatory.**
+- **The genesis block configuration file cannot be changedafter chain initialization.**
+- Any changes to the genesis block configuration after chain initialization will not take effect; the system will still use the genesis configuration from the time of chain initialization.
 
 #### 1.1.1 Configuring Chain Information
 
@@ -64,7 +61,7 @@ node.1 = 74034fb43f75c63bb2259a63f71d9d1c658945409889d3028d257914be1612d1f2e80c4
 
 #### 1.1.3 Data Compatibility Configuration
 
-Supports dynamic data version upgrades. This configuration item is located under `[version]`:
+Supports data version upgrade dynamically. This configuration item is located under `[version]`:
 
 - `[version].compatibility_version`: Data compatibility version number, default is `v3.10.0`. When a new version upgrade is initiated, all binaries are replaced, and the data version can be dynamically upgraded by sending a transaction to modify the system configuration.
 
@@ -207,12 +204,9 @@ This section including configure file `config.ini`、p2p peer connection config 
 
 The `config.ini` file uses the `ini` format and includes configuration items for **P2P, RPC, cert, chain, security, consensus, storage, txpool, and log**.
 
-```eval_rst
-.. important::
-    - The public IPs of cloud hosts are virtual IPs. If `listen_ip` is set to an external IP, it will fail to bind. You must use `0.0.0.0`.
-    - RPC/P2P listening ports must be within the range of 1024-65535 and should not conflict with other application listening ports on the machine.
-    - For development and experience convenience, the reference configuration for `listen_ip` is `0.0.0.0`. For security considerations, please modify it to a secure listening address according to the actual business network situation, such as an internal IP or a specific external IP.
-```
+- The public IPs of cloud hosts are virtual IPs. If`listen_ip` is set to an external IP, it will fail to bind.You must use `0.0.0.0`.
+- RPC/P2P listening ports must be within the range of1024-65535 and should not conflict with other applicationlistening ports on the machine.
+- For development and experience convenience, the reference configuration for `listen_ip` is `0.0.0.0`. For security considerations, please modify it to a secure listening address according to the actual business network situation, such as an internal IP or a specific external IP.
 
 #### 2.1.1 Configuring P2P
 
@@ -316,11 +310,8 @@ The `[security]` configuration sets the private key path, which is mainly used f
 
 Considering that PBFT module packaging too quickly can result in some blocks containing only 1 to 2 very few transactions, wasting storage space, Universal BCOS introduces the `min_seal_time` configuration item under the variable configuration `config.ini` of `[consensus]` to control the minimum time for PBFT consensus packaging. That is: The consensus node will start the consensus process only if the packaging time exceeds `min_seal_time` and the number of packaged transactions is greater than 0, processing the newly packaged block.
 
-```eval_rst
-.. important::
-   - ``min_seal_time`` defaults to 500ms
-   - ``min_seal_time`` should not exceed the empty block time of 1000ms. If the set value exceeds 1000ms, the system defaults min_seal_time to 500ms
-```
+- ``min_seal_time`` defaults to 500ms
+- ``min_seal_time`` should not exceed the empty block time of 1000ms. If the set value exceeds 1000ms, the system defaults min_seal_time to 500ms
 
 ```ini
 [consensus]

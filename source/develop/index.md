@@ -59,7 +59,7 @@ Here is a tutorial of build a first DApp: [Build a first DApp](./dapp_guide.md).
 
 ## For nodes maintainers
 
-If you want to build a blockchain instance of UBCOS in your computer or remote server, or run a node of UBCOS, to be a observator, or to participate in consensus and governance, you can start with the following steps.
+If you want to build a blockchain instance of UBCOS in your own environment, or run a node of UBCOS, to be a observator, or to participate in consensus and governance, you can start with the following steps.
 
 ### Step 1: Build a chain
 
@@ -67,10 +67,10 @@ Follow the [Build a chain](./build_chain.md) guide to build a simple 4-node bloc
 
 ### Step 2: Run a node
 
-For you to run a node, you can follow the [Run a node](./run_node.md) guide to run a node in your computer or remote server.
+For you to run a node, you can follow the [guide](./run_node.md).
 
-- If you want to participate in consensus and governance, you can follow the [Run a consensus node](./run_consensus.md) guide to run a consensus node.
-- If you want to be a observer, you can follow the [Run a observer node](./run_observer.md) guide to run a observer node.
+- If you want to participate in consensus and governance, you can follow the [Run a consensus node](./run_consensus.md) guide.
+- If you want to be a observer, you can follow the [Run a observer node](./run_observer.md) guide.
 
 More information of node types instructions in [Node types](../advance/nodes.md).
 
@@ -101,5 +101,7 @@ build_chain
 run_node
 config
 management
+committee
+committee_usage
 compile_from_source
 ```

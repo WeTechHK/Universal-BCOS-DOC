@@ -85,8 +85,6 @@ writing RSA key
 [INFO] Auth mode            : false
 [INFO] Start port           : 30300 20200
 [INFO] Server IP            : 127.0.0.1:4
-[INFO] SM model             : false
-[INFO] enable HSM           : false
 [INFO] Output dir           : ./nodes
 [INFO] All completed. Files in ./nodes
 ```

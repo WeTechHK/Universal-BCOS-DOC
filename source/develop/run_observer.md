@@ -1,6 +1,6 @@
-# Run a observer node
+# Run an observer node
 
-This section provides a step-by-step guide to running an observer node on your computer or server.
+This section provides a step-by-step guide to running an observer node on your own environment.
 
 Here are three ways to run an observer node, choose the one that best suits your needs:
 

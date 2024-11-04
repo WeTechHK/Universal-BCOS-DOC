@@ -4,9 +4,9 @@ Universal BCOS provides three types of nodes: consensus nodes, observer nodes an
 
 - Consensus nodes are responsible for validating transactions and producing new blocks.
 - Observer nodes are full nodes that verify every block from genesis but do not have to participate producing new blocks.
-- Light nodes only download block headers and request other information from full nodes.
+- Light nodes only download block headers and request other information from consensus nodes or observer nodes.
 
-In this section, you will learn how to run a consensus node, observer node and light node on your computer or server.
+In this section, you will learn how to run a consensus node, observer node and light node on your own environment.
 
 ## Run a consensus node
 
