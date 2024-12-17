@@ -10,7 +10,7 @@ Curious about the amazing people behind the project? Check out our [contributors
 
 We’re proud of what we’ve accomplished so far! Visit our [Releases page](https://github.com/WeTechHK/Universal-BCOS/releases) to see the milestones we’ve hit and the features we’ve delivered.
 
-💡 New Ideas & Work in Progress
+**💡 New Ideas & Work in Progress**
 
 Got a great idea or want to see what’s brewing? Head over to our [RFC repository](https://github.com/WeTechHK/Universal-BCOS-RFCs) to explore proposals, share your thoughts, or contribute to ongoing discussions.
 
