@@ -11,6 +11,8 @@ myst:
 :caption: Community
 :maxdepth: 1
 
+participate
 contribute
-events
+happenings
 ```
+

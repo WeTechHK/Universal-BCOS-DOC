@@ -86,5 +86,6 @@ Deep dive into Universal BCOS.
 
 Community resources of Universal BCOS.
 
+- [](./community/participate.md)
 - [](./community/contribute.md)
-- [](./community/events.md)
+- [](./community/happenings.md)
