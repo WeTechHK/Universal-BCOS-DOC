@@ -104,4 +104,5 @@ management
 committee
 committee_usage
 compile_from_source
+DAO_usage
 ```
